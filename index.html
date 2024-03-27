@@ -3,14 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Day 1</title>
+  <title>Objects & Arrays</title>
 </head>
 
 <body>
   <h1>Hello, World!</h1>
 
   <script>
-    console.log('Hello, World')
+    let myPet = {
+      type: "dog",
+      name: "Telly",
+      age: 11
+    };
+    
+    myPet.breed = "Mini Pincher";
+    myPet["isFriendly"] = true;
+
+    console.log (myPet.type); //output = Dog
+    console.log(myPet["name"]);
+    console.log(myPet);
+
   </script>
 </body>
 
