@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Objects & Arrays</title>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Objects & Arrays</title>
-</head>
+	<body>
+		<h1>Hello, World!</h1>
 
-<body>
-  <h1>Hello, World!</h1>
+		<script>
+			let myPet = {
+				type: "dog",
+				name: "Telly",
+				age: 9,
+			};
 
-  <script>
-    let myPet = {
-      type: "dog",
-      name: "Telly",
-      age: 11
-    };
-    
-    myPet.breed = "Mini Pincher";
-    myPet["isFriendly"] = true;
+			myPet.breed = "Mini Pincher";
+			myPet["isFriendly"] = true;
 
-    console.log (myPet.type); //output = Dog
-    console.log(myPet["name"]);
-    console.log(myPet);
+			console.log(myPet.type); //output = Dog
+			console.log(myPet["name"]);
+			console.log(myPet);
+			console.log(myPet.breed);
+			console.log(myPet.age);
+			delete myPet.age;
+			console.log(myPet.age);
+			myPet.age = 11;
+			console.log(myPet.age);
+			const myPetString = `My pets name is ${myPet.name}, my pet's age is ${myPet.age}. Also, my pets breed is ${myPet.breed}.`;
+			const words = myPetString.split(" ");
+			console.log(words.length -1);
+      console.log(words.length);
+      console.log(words);
 
-  </script>
-</body>
+      let colors = ["red", "green", "blue"];
+      let numbers = [1, 5, 23, 100];
+      const primitives = [true, 1, 'example', null, undefined];
+      colors[1] = "yellow";
+      console.log(colors);
+      console.log(colors[1]);
+      console.log(numbers[3]);
+      console.log(numbers[0]);
+      console.log(numbers.length);
 
+
+		</script>
+	</body>
 </html>
