@@ -43,6 +43,47 @@
       console.log(numbers[0]);
       console.log(numbers.length);
 
+      let shoppingList = [
+        {item: "milk", quantity: 2 },
+        {item: "bread", quantity: 1 },
+        {item: "apples", quantity: 6}
+      ];
+
+      //Add a new item to the list
+
+     shoppingList.push({item: "cheese", quantity: 1});
+
+      console.log("Buy " + shoppingList[2].quantity + " " + shoppingList[2].item);
+
+      let movieRatings = [5 , 4, 3 , 4, 5];
+      movieRatings[1] = 5;
+      movieRatings[2] = 5;
+      console.log(movieRatings)
+
+      let groceryList = ['milk', 'bread', 'cheese'];
+      console.log(groceryList.length);
+      groceryList.push('eggs');
+      console.log(groceryList.length);
+      console.log(groceryList);
+
+      let items = ['a', 'b', 'c', 'e', 'f', 'g'];
+      items.push('d');
+      console.log(items);
+      items.length = 6;
+      items.length = 4;
+      console.log(items);
+
+      function buildUser(firstName, lastName, age) {
+        return{
+          firstName: firstName,
+          lastName: lastName,
+          age: age
+        };
+      }
+      let user = buildUser('Derek', 'Peters', 41);
+      console.log(user);
+
+
 
 		</script>
 	</body>
