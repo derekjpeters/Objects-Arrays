@@ -1,131 +1,173 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JavaScript Objects Challenges</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <script src="script.js"></script>
-    <h1>JavaScript Objects Challenges</h1>
+	<head>
+		<title>JavaScript Objects Challenges</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<script>
+			const addPet = {
+				type: "dog",
+				name: "Pepper",
+				age: "8",
+				breed: "Boxer",
+				color: "red",
+				makeSound: function () {
+					console.log(`${this.name} says woof!`);
+				},
+			};
 
-    <section id="pet-store">
-      <h2>1. The Pet Store</h2>
-      <p>
-        <strong>Task:</strong> Create objects to represent different pets in a
-        pet store.
-      </p>
-      <ul>
-        <li>
-          <strong>Properties:</strong>
-          <ul>
-            <li>type (dog, cat, bird, etc.)</li>
-            <li>name</li>
-            <li>age</li>
-            <li>breed (optional)</li>
-            <li>color</li>
-          </ul>
-        </li>
-        <li><strong>Method:</strong> Add a <em>makeSound()</em> method.</li>
-      </ul>
-    </section>
+			//Log the pet details and call the make sound method
+			console.log("Pet Registration");
+			console.log(addPet);
+			addPet.makeSound();
+			let pepperAge = addPet["age"];
+			console.log(pepperAge);
 
-    <section id="student-records">
-      <h2>2. Student Records</h2>
-      <p>
-        <strong>Task:</strong> Create objects to represent different students in
-        a school.
-      </p>
-      <ul>
-        <li>
-          <strong>Properties:</strong>
-          <ul>
-            <li>name</li>
-            <li>age</li>
-            <li>gradeLevel</li>
-            <li>courses</li>
-          </ul>
-        </li>
-        <li><strong>Method:</strong> Add a <em>study()</em> method.</li>
-      </ul>
-    </section>
+			let superHero = {
+				firstName: "Justin",
+				superPower: "Always Right",
+				superIntro: function () {
+					console.log(
+						`${this.firstName} has a super power of being ${this.superPower}!`
+					);
+				},
+			};
+			superHero.superIntro();
 
-    <section id="recipe-manager">
-      <h2>3. Recipe Manager</h2>
-      <p>
-        <strong>Task:</strong> Create objects to represent different recipes in
-        a cookbook.
-      </p>
-      <ul>
-        <li>
-          <strong>Properties:</strong>
-          <ul>
-            <li>name</li>
-            <li>ingredients</li>
-            <li>instructions</li>
-          </ul>
-        </li>
-        <li><strong>Method:</strong> Add a <em>cook()</em> method.</li>
-      </ul>
-    </section>
+			console.log(superHero);
 
-    <section id="library-system">
-      <h2>4. Library System (Challenge Mode)</h2>
-      <p>
-        <strong>Task:</strong> Create objects to represent different books in a
-        library system.
-      </p>
-      <ul>
-        <li>
-          <strong>Properties:</strong>
-          <ul>
-            <li>title</li>
-            <li>author</li>
-            <li>yearPublished</li>
-            <li>genre</li>
-          </ul>
-        </li>
-        <li><strong>Method:</strong> Add a <em>checkout()</em> method.</li>
-      </ul>
-    </section>
+			function Student(name, age, gradeLevel, courses) {
+				this.name = name;
+				this.age = age;
+				this.gradeLevel = gradeLevel;
+				this.courses = courses;
 
-    <section id="vehicle-factory">
-      <h2>5. Vehicle Factory</h2>
-      <p>
-        <strong>Task:</strong> Create objects to represent different vehicles in
-        a factory.
-      </p>
-      <ul>
-        <li>
-          <strong>Properties:</strong>
-          <ul>
-            <li>type (car, truck, motorcycle, etc.)</li>
-            <li>model</li>
-            <li>year</li>
-            <li>color</li>
-          </ul>
-        </li>
-        <li><strong>Method:</strong> Add a <em>startEngine()</em> method.</li>
-      </ul>
-    </section>
+				this.study = function () {
+					console.log(
+						`${this.name}'s age is ${this.age} and they are studying ${this.courses}. They are currently in the ${this.gradeLevel}th grade.`
+					);
+				};
+			}
 
-    <section id="book-collection">
-      <h2>6. Book Collection</h2>
-      <p>
-        <strong>Task:</strong> Create objects to represent different books in a
-        collection.
-      </p>
-      <ul>
-        <li>
-          <strong>Properties:</strong>
-          <ul>
-            <li>title</li>
-            <li>author</li>
-            <li>yearPublished</li>
-            <li>genre</li>
-          </ul>
-        </li>
-        <li><strong>Method:</strong> Add a <em>read()</em> method.</li>
-      </ul>
-    </section>
-  </body>
+			let john = new Student("John", 15, 9, ["Math", "Science", "Theater"]);
+
+			console.log(john);
+			john.study();
+
+			let cake = {
+				flavor: "lemon pound",
+				layers: 1,
+				price: 14.99,
+				decorations: ["lemon icing", "sprinkles", "personal message"],
+			};
+
+			console.log(cake.flavor);
+			let currentFlavor = cake["flavor"];
+			let priceSold = cake["price"];
+			console.log(priceSold);
+			console.log(currentFlavor);
+			console.log(cake);
+
+			delete cake.layers;
+			console.log(cake);
+
+			const primitives = [true, 1, "example", null, undefined];
+			console.log(primitives);
+			console.log(primitives[0]);
+			console.log(primitives[1]);
+			console.log(primitives[2]);
+			console.log(primitives[3]);
+			console.log(primitives[4]);
+
+			primitives.push("new element");
+			console.log(primitives);
+			console.log(primitives[5]);
+
+			let movie = {
+				title: "Toy Story",
+				director: "John Lasseter",
+				year: 1995,
+				reviews: [9, 8.5, 10, 7, 9.5],
+			};
+
+			console.log(
+				"Average Review for " +
+					movie.title +
+					" is " +
+					(
+						movie.reviews.reduce((a, b) => a + b, 0) / movie.reviews.length
+					).toFixed(1)
+			);
+
+			let car = {
+				make: "Toyota",
+				model: "4 Runner",
+				year: 2021,
+				safetyRating: [8, 9.5, 7, 10, 6.5, 3],
+				consumerRating: [9, 10, 8.5, 9, 7.5, 4],
+			};
+			console.log(car);
+			car.safetyRating.push(9);
+			car.consumerRating.push(10);
+			console.log(car);
+			let cars = [
+				{ make: "Toyota", model: "4 Runner", year: 2021 },
+				{ make: "Mitsubishi", model: "Outlander", year: 2023 },
+				{ make: "Honda", model: "Civic", year: 2020 },
+			];
+
+			console.log(cars);
+			console.log("I used to have a " + cars[0].make + " " + cars[0].model);
+			cars.push({ make: "Kia", model: "Carnival", year: 2024 });
+
+			console.log(cars);
+
+      function createUser(firstName, lastName, email) {
+        return {
+          firstName: firstName,
+          lastName: lastName,
+          email: email
+        };
+      }
+
+      let newUser = createUser('John', 'Doe', 27);
+
+      console.log(newUser);
+
+      const rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue','Blue', 'Indigo', 'Violet'];
+
+      const colorDetails = {
+        Red: {meaning: 'Love', hex: '#ff0000'},
+        Orange: {meaning: 'Joy', hex: '#ff7f00'},
+        Yellow: {meaning: 'Happiness', hex: '#ffff00'},
+        Green: {meaning: 'Lucky', hex: '#00ff00'},
+        Blue: {meaning: 'Water', hex: '#000ff'},
+        Indigo: {meaning: 'Depth', hex: '#4B0082'},
+        Violet: {meaning: 'Pretty', hex: '#9400D3'}
+      };
+
+      rainbowColors.pop ('Blue'); 
+
+      for (let index in rainbowColors) {
+        let color = rainbowColors[index];
+        console.log(color + ": " + colorDetails[color].meaning + ' (Hex: ' + colorDetails[color].hex + " )");
+      }
+      console.log(rainbowColors.length);
+      console.log(rainbowColors);
+
+      const colorCount = {};
+
+      for (let color of rainbowColors) {
+        if (colorCount[color]) {
+          colorCount[color]++;
+        } else {
+          colorCount[color] = 1
+        }
+      }
+
+      console.log(colorCount);
+
+		</script>
+	</body>
 </html>
