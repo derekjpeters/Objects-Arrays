@@ -22,7 +22,7 @@
 					console.log(`Task added: ${description}`); //Log a message showing that a task is added
 				},
 				//Method to complete a task by index
-				completeTaks: function (index) {
+				completeTasks: function (index) {
 					//Check if there is a tasks at the provided index
 					if (this.tasks[index]) {
 						this.tasks[index].completed = true; //Set the task's completed to true
@@ -33,18 +33,49 @@
 				},
 
 				//Method to add multiple tasks from a single string
-				addMultipleTasks: function(complexDescription) {
+				addMultipleTasks: function (complexDescription) {
 					//Split the complex complexDescription into an array of tasks strings
-					let tasks = complexDescription.split(', ');
+					let tasks = complexDescription.split(", ");
 					//loop over each tasks string
 					for (let task of tasks) {
 						//split each task string into description and due date
-						let details = task.split(' by ')
-						
+						let details = task.split(" by ");
+						//Call addTask method to add each split
+						this.addTask(details[0], details[1]);
+					}
+				},
+				// A method to display tasks using for..of loop
+				enhancedDisplayTasks: function() {
+					for (let task of this.tasks) {
+						//Determin the completion status of the tasks
+						let status = task.completed ? 'Completed' : 'Pending';
+						//This is a turnery simplified if-else if
+						//Log each task's Description
+						console.log(`${task.description} - Due: ${task.dueDate} - Status: [${status}]`);
+					}
+				},
+
+				//Remove all completed tasks from lists
+				clearCompletedTasks: function() {
+					let index = 0; //STart from the first index of task array and flow through the array, removing any completed tasks
+					//Continue looping as long as index is less than the tasks array
+					while (index < this.tasks.length) {
+						if (this.tasks[index].completed) {
+							console.log(`Removing completed tasks: ${this.tasks[index].description}`); //Remove the complete  
+							this.tasks.splice(index, 1); //Remove the task from the tasks array if it is completed
+						} else {
+							index++;
+						}
 					}
 				}
-
 			};
+
+			taskManager.addTask('Module 2 Completion', '2024-04-25');
+			taskManager.addTask('Sprint Challenge', '2024-05-05');
+			console.log (taskManager);
+			taskManager.completeTasks(0);
+			taskManager.enhancedDisplayTasks();
+			
 		</script>
 	</body>
 </html>
