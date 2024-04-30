@@ -6,78 +6,47 @@
 	</head>
 	<body>
 		<script>
-		/*	//Define a Taskmanager Object using Object Literal
+			// Define a simple TaskManager object
 			let taskManager = {
-				tasks: [], //Initialize an empty array to store tasks
+				tasks: [], // Array to store tasks
 
-				//Method to add tasks
-				addTask: function (description, dueDate) {
-					//Create a task object with description, due date, and completion status = default to false using falsy
-					const task = {
-						description: description, //Task description
-						dueDate: dueDate, //Task Due Date
-						completed: false, //Initial completion set to false
-					};
-					this.tasks.push(task); //Add the task object to the TASKS array
-					console.log(`Task added: ${description}`); //Log a message showing that a task is added
-				},
-				//Method to complete a task by index
-				completeTasks: function (index) {
-					//Check if there is a tasks at the provided index
-					if (this.tasks[index]) {
-						this.tasks[index].completed = true; //Set the task's completed to true
-						console.log(`Task completed: ${this.tasks[index].description}`); //Log the completion
+				// Method to add tasks using prompt
+				addTaskFromPrompt: function () {
+					let description = prompt("Enter task description:");
+					let dueDate = prompt("Enter task due date (e.g., YYYY-MM-DD):");
+					if (description && dueDate) {
+						// Check if both inputs are provided
+						this.tasks.push({
+							description: description,
+							dueDate: dueDate,
+							completed: false,
+						});
+						console.log(`Task added: ${description}, Due by: ${dueDate}`);
 					} else {
-						console.log(`No tasks found at index: ${index}`); //no tasks are found, log this
+						console.log("Task addition cancelled.");
 					}
 				},
 
-				//Method to add multiple tasks from a single string
-				addMultipleTasks: function (complexDescription) {
-					//Split the complex complexDescription into an array of tasks strings
-					let tasks = complexDescription.split(", ");
-					//loop over each tasks string
-					for (let task of tasks) {
-						//split each task string into description and due date
-						let details = task.split(" by ");
-						//Call addTask method to add each split
-						this.addTask(details[0], details[1]);
-					}
+				// Method to display all tasks
+				displayTasks: function () {
+					console.log("All Tasks:");
+					this.tasks.forEach((task) => {
+						let status = task.completed ? "Completed" : "Pending";
+						console.log(
+							`${task.description} - Due: ${task.dueDate} - Status: [${status}]`
+						);
+					});
 				},
-				// A method to display tasks using for..of loop
-				enhancedDisplayTasks: function() {
-					for (let task of this.tasks) {
-						//Determin the completion status of the tasks
-						let status = task.completed ? 'Completed' : 'Pending';
-						//This is a turnery simplified if-else if
-						//Log each task's Description
-						console.log(`${task.description} - Due: ${task.dueDate} - Status: [${status}]`);
-					}
-				},
-
-				//Remove all completed tasks from lists
-				clearCompletedTasks: function() {
-					let index = 0; //STart from the first index of task array and flow through the array, removing any completed tasks
-					//Continue looping as long as index is less than the tasks array
-					while (index < this.tasks.length) {
-						if (this.tasks[index].completed) {
-							console.log(`Removing completed tasks: ${this.tasks[index].description}`); //Remove the complete  
-							this.tasks.splice(index, 1); //Remove the task from the tasks array if it is completed
-						} else {
-							index++;
-						}
-					}
-				}
 			};
 
-			taskManager.addTask('Module 2 Completion', '2024-04-25');
-			taskManager.addTask('Sprint Challenge', '2024-05-05');
-			console.log (taskManager);
-			taskManager.completeTasks(0);
-			taskManager.enhancedDisplayTasks(); */
+			// Add tasks interactively using prompts
+			taskManager.addTaskFromPrompt(); // You can call this multiple times as needed
+
+			// Display tasks
+			taskManager.displayTasks();
 
 			for (let count = 1; count <= 10; count++) {
-				console.log(`${count} Mississippi`)
+				console.log(`${count} Mississippi`);
 			}
 
 			let countDown = 10;
@@ -85,10 +54,19 @@
 				console.log(countDown);
 				countDown--;
 			}
-			console.log('Blast-Off');
+			console.log("Blast-Off");
 
-			const colors23w3 = ["yellow", 'blue', 'red', 'pink', 'sage green', 'green', 'cyan', 'black'];
-			
+			const colors23w3 = [
+				"yellow",
+				"blue",
+				"red",
+				"pink",
+				"sage green",
+				"green",
+				"cyan",
+				"black",
+			];
+
 			for (let i = 0; i < colors23w3.length; i++) {
 				console.log(colors23w3[i]);
 			}
@@ -114,14 +92,13 @@
 			function sumNumberForLoop(nums) {
 				let sum = 0;
 				for (let i = 0; i < nums.length; i++) {
-					if (nums [i] === 7) return "That is a unlucky number";
-					if (typeof nums[i] === 'number') sum += nums[i]
+					if (nums[i] === 7) return "That is a unlucky number";
+					if (typeof nums[i] === "number") sum += nums[i];
 				}
 				return sum;
 			}
 
-			console.log(sumNumberForLoop([10,20,10,4,77]));
-			
+			console.log(sumNumberForLoop([10, 20, 10, 4, 77]));
 		</script>
 	</body>
 </html>
