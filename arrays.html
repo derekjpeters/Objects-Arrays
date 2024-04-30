@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        let droids = ['C-3PO', 'R2-D2', 'BB-8', 'K-S250'];
+        let newDroids = droids.push('BB-Barry');
+        console.log(droids);
+        console.log(newDroids);
+
+        const r2d2Index = droids.indexOf('R2-D2');
+        console.log(r2d2Index);
+        console.log(droids.length);
+
+        const battleDroids = droids.slice (2,4); //droids.slice(droids.indexOf('BB-8'), droids.indexOf('K-S250') +1);
+        console.log(battleDroids);
+
+        let lastDroid = droids.pop();
+        console.log(droids.length);
+        console.log(droids);
+
+function jediVsSithDuel() {
+    // Array of possible moves a combatant can make.
+    const moves = ['lightsaber strike', 'force push', 'force block'];
+
+    // Object to track each combatant's moves and count.
+    let duelLog = {
+        Jedi: { lastMoves: [], moveCount: 0 },
+        Sith: { lastMoves: [], moveCount: 0 }
+    };
+
+    // Function to randomly select a move from the moves array.
+    function getRandomMove() {
+        return moves[Math.floor(Math.random() * moves.length)];
+    }
+
+    // Loop indefinitely until one combatant defends against three consecutive attacks.
+    while (true) {
+        // Generate a move for each combatant.
+        let moveJedi = getRandomMove();
+        let moveSith = getRandomMove();
+
+        // Log moves to each combatant's log and increment their move count.
+        duelLog.Jedi.lastMoves.push(moveJedi);
+        duelLog.Sith.lastMoves.push(moveSith);
+        duelLog.Jedi.moveCount++;
+        duelLog.Sith.moveCount++;
+
+        console.log(`Jedi moved: ${moveJedi}, Sith moved: ${moveSith}`);
+
+        // Check if the last three moves for either combatant were all 'force block'.
+        if (duelLog.Jedi.lastMoves.slice(-3).every(m => m === 'force block') ||
+            duelLog.Sith.lastMoves.slice(-3).every(m => m === 'force block')) {
+            console.log(`Ending duel after successful defense. Duel log:`, duelLog);
+            // Return the maximum move count between the two combatants as the result.
+            return Math.max(duelLog.Jedi.moveCount, duelLog.Sith.moveCount);
+        }
+
+        // Ensure that only the last three moves are considered for each combatant.
+        if (duelLog.Jedi.lastMoves.length > 3) duelLog.Jedi.lastMoves.shift();
+        if (duelLog.Sith.lastMoves.length > 3) duelLog.Sith.lastMoves.shift();
+    }
+}
+
+// Execute the duel and log the total number of moves.
+let result = jediVsSithDuel();
+console.log(`Total moves in the duel: ${result}`);
+
+
+
+
+    </script>
+</body>
+</html>
