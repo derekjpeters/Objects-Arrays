@@ -7,43 +7,57 @@
 	<body>
 		<script>
 			// Define a simple TaskManager object
-			let taskManager = {
-				tasks: [], // Array to store tasks
+let taskManager = {
+    tasks: [], // Array to store tasks
 
-				// Method to add tasks using prompt
-				addTaskFromPrompt: function () {
-					let description = prompt("Enter task description:");
-					let dueDate = prompt("Enter task due date (e.g., YYYY-MM-DD):");
-					if (description && dueDate) {
-						// Check if both inputs are provided
-						this.tasks.push({
-							description: description,
-							dueDate: dueDate,
-							completed: false,
-						});
-						console.log(`Task added: ${description}, Due by: ${dueDate}`);
-					} else {
-						console.log("Task addition cancelled.");
-					}
-				},
+    // Method to add tasks using prompt
+    addTaskFromPrompt: function() {
+        while (true) {
+            let description = prompt("Enter task description (or type 'exit' to finish):");
+            if (description.toLowerCase() === 'exit') {
+                console.log("Exiting task addition.");
+                break;
+            }
+            let dueDate = prompt("Enter task due date (YYYY-MM-DD):");
+            if (this.validateDate(dueDate)) {
+                this.tasks.push({
+                    description: description,
+                    dueDate: dueDate,
+                    completed: false
+                });
+                console.log(`Task added: ${description}, Due by: ${dueDate}`);
+            } else {
+                console.log("Invalid date format. Please try again.");
+            }
+        }
+    },
 
-				// Method to display all tasks
-				displayTasks: function () {
-					console.log("All Tasks:");
-					this.tasks.forEach((task) => {
-						let status = task.completed ? "Completed" : "Pending";
-						console.log(
-							`${task.description} - Due: ${task.dueDate} - Status: [${status}]`
-						);
-					});
-				},
-			};
+    // Method to display all tasks
+    displayTasks: function() {
+        console.log("All Tasks:");
+        if (this.tasks.length === 0) {
+            console.log("No tasks added yet.");
+        } else {
+            this.tasks.forEach(task => {
+                let status = task.completed ? 'Completed' : 'Pending';
+                console.log(`${task.description} - Due: ${task.dueDate} - Status: [${status}]`);
+            });
+        }
+    },
 
-			// Add tasks interactively using prompts
-			taskManager.addTaskFromPrompt(); // You can call this multiple times as needed
+    // Validate date format
+    validateDate: function(dateStr) {
+        const regex = /^\d{4}-\d{2}-\d{2}$/; // Simple regex for date validation
+        return dateStr.match(regex) && new Date(dateStr) !== "Invalid Date";
+    }
+};
 
-			// Display tasks
-			taskManager.displayTasks();
+// Add tasks interactively using prompts
+taskManager.addTaskFromPrompt(); // Allows multiple additions until 'exit' is typed
+
+// Display tasks
+taskManager.displayTasks();
+
 
 			for (let count = 1; count <= 10; count++) {
 				console.log(`${count} Mississippi`);
