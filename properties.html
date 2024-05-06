@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties and Methods</title>
+</head>
+<body>
+    <script>
+        const customer = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 30,
+            greet: function() {
+              console.log(`Welcome to Dionne's Shop! ${this.firstName} ${this.lastName}.`)  
+            }
+        }
+
+       customer.greet();
+
+        const commerceOwner = {
+            name: 'Dionne',
+            storeName: 'eShop',
+            greet: function() {
+                console.log(`Welcome to ${this.storeName}. I'm ${this.name}, the shop manager`)
+            }
+        }
+
+        commerceOwner.greet();
+
+        const order = {
+            orderNumber: 'A12345',
+            status: 'Processing',
+            updateStatus: function(newStatus) {
+                this.status = newStatus;
+            },
+            getStatus: function() {
+                return `Order ${this.orderNumber} is currently ${this.status}.`;
+            }
+        }
+
+        //Update the order status and display a new status
+        console.log(order.getStatus());
+        order.updateStatus('Shipped');
+        console.log(order.getStatus());
+
+        const product = {
+            id: 'P001',
+            name: 'Wireless Headphones',
+            price: 59.99,
+            isInStock: true,
+            getInfo() {
+                return `${this.name} (ID: ${this.id}) is priced at $${this.price} and is currenty in stocke: ${this.isInStock}.`;
+            }
+        };
+
+        console.log(product.getInfo());
+
+        //Define an object Shopping Cart
+        const shoppingCart = {
+            items: [],
+            addItem(itemName, itemPrice){
+                this.items.push({name: itemName, price:itemPrice});
+            },
+            viewCart() {
+                let total = 0;
+                let items = this.items.map(item => {
+                    total += item.price;
+                    return `${item.name} - $${item.price}`;
+                }).join(', ');
+                    return `Items in your cart: ${product.name}. Total cost:$${total}`;
+            }
+        };
+
+    shoppingCart.addItem('Wireless Headphones', 59.99);
+    console.log(shoppingCart.viewCart());
+
+        const car = {
+            brand: 'Ford',
+            model: 'Mustang', 
+            getDescription: function() {
+                //'this' refers to the outer scope. Could be another window
+                console.log(`Car: ${this.brand} ${this.model}`);
+            }
+        };
+        car.getDescription();
+
+        
+        
+    </script>
+</body>
+</html>
