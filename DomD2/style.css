@@ -1,0 +1,29 @@
+/* styles.css */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.about-solutions, .recap, #parent, #countdown-widget {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+#image-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#countdown-widget {
+    text-align: center;
+}

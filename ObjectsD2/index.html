@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Object References</title>
+</head>
+<body>
+    <script>
+        //Define a class called Student
+        class Student {
+            //Constructor initializes the properties of the class
+            constructor() {
+                this.name = 'Shera';
+                this.grade = 'B'; 
+                this.year = 3;
+            }
+
+            //Method that returns string
+
+            test() {
+                return `${this.name} recieved a ${this.grade} on the end year test!`;
+            }
+        }
+        //creates an instance of Student
+        let student = new Student();
+        //log the output of the the string calling the test();
+        console.log(student.test()); //output should be the string 
+
+        //Define a class called Dog
+        class Dog {
+            //Constructor to initialize the properties of the class
+            constructor(name, breed, age) {
+                this.name = name;
+                this.breed = breed;
+                this.age = age;
+            }
+
+            //Method that creates a string/ Action for barking
+            bark() {
+                return 'woof woof';
+            }
+        }
+
+        //Create an instance of dog
+        let dog = new Dog ('Rosie', 'Golden Retriever', 1);
+        let dog2 = new Dog ('Jack', 'Unknown', 14);
+        let dog3 = new Dog ('Chief', 'Dovermen', 1);
+
+        //log the output of the bark method
+        console.log(dog.bark());
+
+        console.log(dog);
+        console.log(dog2);
+        console.log(dog3);
+
+        let string = 'hello'; //Immutable string
+
+        //Attempt to change the first character
+        string[0] = 'H'; 
+
+        console.log(string);
+
+        let array = ['a', 'b', 'c'];
+
+        //modify a to be A
+        array[0] = 'A';
+
+        console.log (array);
+    
+        //Object representing food
+        const food = {name: 'sandwich'};
+        //copy of reference to the food variable
+        const foodCopy = food;
+
+        //Modify the copy
+
+        foodCopy.name = 'pizza';
+
+        console.log(food.name);
+
+        const orginal = {prop: 'value'};
+        //create a reference point
+        const copy = orginal;
+
+        copy.prop = 'new value';
+
+        console.log(orginal.prop);
+
+        //class called countdown - Rocket ship!!!!
+        class CountDown {
+            constructor(number){
+                this.number = number;
+            }
+
+            // method that decrements the countdown number
+            count(){
+                if (this.number < 0) return null;
+                if (this.number === 0) {
+                    this.number -= 1;
+                    return 'Liftoff!';
+                }
+                return `${this.number--}!`;
+        }
+    }
+
+    let countdown = new CountDown(3);
+
+    console.log(countdown.count());
+    console.log(countdown.count());
+    console.log(countdown.count());
+    console.log(countdown.count());
+    console.log(countdown.count());
+
+
+    </script>
+</body>
+</html>

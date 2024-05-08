@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Student Management Dashboard</title>
+		<link rel="stylesheet" href="/ObjectsD2/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Student Management Dashboard</h1>
+			<form id="student-form">
+				<label>
+					Name:
+					<input type="text" id="name" required />
+				</label>
+				<label>
+					Current Grade:
+					<input type="text" id="grade" required />
+				</label>
+				<label>
+					Graduation Year:
+					<input type="number" id="year" required />
+				</label>
+				<button type="submit">Add Student</button>
+			</form>
+			<div id="message"></div>
+			<ul id="student-list"></ul>
+			<button id="clear-all">Clear All Students</button>
+		</div>
+		<script src="/ObjectsD2/script.js"></script>
+	</body>
+</html>
