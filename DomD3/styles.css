@@ -135,3 +135,35 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
+/* Event Propagation Styling */
+.propagation {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.propagation-box {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    background-color: #e74c3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+#outer {
+    background-color: #34495e;
+}
+
+#middle {
+    background-color: #2980b9;
+}
+
+#inner {
+    background-color: #2ecc71;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+}
