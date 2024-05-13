@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//Destructuring assignment with objects
+			let student = {
+				name: "John Doe",
+				age: 20,
+				course: "Intro to JavaScript",
+			};
+			const { name, age, course } = student;
+
+			console.log(name); //output should be john
+			console.log(age); //output should be age
+			console.log(course); // output should be the current course
+
+			//Destructuring with array
+			let scores = [90, 85, 88, 90];
+			let [math, english, gym, JavaScript] = scores; //Destructuring the array
+
+			console.log(math);
+			console.log(english);
+			console.log(gym);
+			console.log(JavaScript);
+
+			//Destructuring with Functions
+			function getDetails() {
+				return ["Jane Doe", 22, "Software Engineering"];
+			}
+
+			let [studentName, studentAge, studentCourse] = getDetails(); //Destructuring form a return value of a function
+
+			console.log(studentName);
+			console.log(studentAge);
+			console.log(studentCourse);
+
+			//Creating a copy of arrays and objects using shallow copy
+			let orginalScores = [90, 70, 80];
+			let johnScores = [...scores];
+			let copiedScores = [...orginalScores]; //Creating a shallow copy
+
+			console.log(johnScores);
+			console.log(copiedScores);
+
+			//Ternary Operator condition ? expressionIfTrue : expressionIfFalse
+			let grade = math > 75 ? "Pass" : "Fail";
+			console.log(grade);
+
+			const personsAge = 25;
+			const status = age >= 18 ? "Adult" : "Minor";
+			console.log(status);
+
+			cartItems = 2;
+
+			const message =
+				"You have " +
+				(cartItems > 0 ? cartItems : "No") +
+				" Items in your cart.";
+
+			console.log(message);
+
+			const doubleIfEven = (num) => (num % 2 === 0 ? num * 2 : num);
+
+			/* const currentGrade = 85;
+            const letterGrade = grade >= 90 ? "A" : grade >= 80 ? "B": grade >= 70 ? "C" : grade >= 60 ? "D" : "F0"; //Ternary (BAD FOR THIS DO NOT DO THIS!!!) */
+
+			let students = [
+				{ name: "John", math: 90 },
+				{ name: "Jane", math: 80 },
+				{ name: "Jim", math: 70 },
+			];
+
+			function getPassingStudents(students) {
+				return students.filter(({ math }) => math > 75).map(({ name }) => name);
+			}
+
+            console.log(getPassingStudents(students));
+
+
+
+		</script>
+	</body>
+</html>
