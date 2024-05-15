@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Async Programing</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				background-color: #f0f0f0;
+			}
+			button {
+				padding: 10px 20px;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="clickCounter">Click Me</button>
+        <div id="countdown">10</div>
+        
+		<script>
+			// function delayedGreeting() {
+			// 	setTimeout(() => {
+			// 		console.log("Wazzz UP!");
+			// 	}, 1000);
+			// }
+            
+			// delayedGreeting();
+
+			// function logNumbers() {
+			// 	for (let i = 1; i <= 5; i++) {
+			// 		setTimeout(() => {
+			// 			console.log(i);
+			// 		}, i * 1000);
+			// 	}
+			// }
+			// logNumbers();
+
+			// let count = 0;
+
+			// document.getElementById("clickCounter").addEventListener("click",() => {
+			// 	count++;
+			// 	console.log(`Button clicked ${count} times`);
+			// });
+
+            // window.addEventListener('resize', () => {
+            //     console.log('Window Resized')
+            // });
+
+
+            // const message = [
+            //     {text: 'Uploading file...', delay: 1000},
+            //     {text: 'Processing Upload...', delay: 2000},
+            //     {text: 'Upload Still Processing', delay: 3000},
+            //     {text: 'File Upload Complete!', delay: 4000}
+            // ];
+
+            // //Function to log messages with delays using destructing and arrow functions
+            // const displayMessages = (message) => {
+            //     //Loop through each message object in the array
+            //     message.forEach(({text, delay}) => {
+            //         //setTimeout to log each message after its delay
+            //         setTimeout(() =>{
+            //             console.log(text);
+            //         }, delay);
+            //     });
+            // };
+
+            // displayMessages(message);
+
+            // function startCountdown () {
+            //     let countdownNumber = 10;
+            //     const countdownElement = document.getElementById('countdown');
+            //     const launchButton = document.getElementById('clickCounter');
+            // }
+
+            // launchButton.disabled = true;
+
+            // const intervalID = setInterval(() => {
+            //     countdownElement.textContent = countdownNumber;
+            //     countdownNumber--;
+            // })
+
+            function startCountdown(){
+                let countdownNumber = 10; 
+
+                console.log('Countdown Started');
+                 
+                function countdown() {
+                    if (countdownNumber >= 0) {
+                        console.log(`Countdown; ${countdownNumber}`);
+                        countdownNumber--;
+
+                        //Set the timeOut to countdown the next number with a 1 sec delay
+                        setTimeout(countdown, 1000);
+                    } else {
+                        const liftOffTime = new Date().toLocaleTimeString(); //get the current date and current time of lift off
+                        console.log('LIFT OFF! ' + liftOffTime + '!');
+                    }
+                }
+
+                //Start the first countdown step
+                setTimeout(countdown, 1000);
+            }
+
+            //Start the countdown when the script is in run mode
+
+            startCountdown();
+
+
+
+		</script>
+	</body>
+</html>
