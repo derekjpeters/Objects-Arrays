@@ -1,0 +1,89 @@
+.title {
+    color: blue;
+}
+
+.container .title {
+    color: green;
+}
+
+/* Selectors and specificity than class selectors */
+#unique {
+    color: red;
+}
+
+.subtitle {
+    color: aqua;
+}
+
+/*Crafting a Selector */
+.container header h1 {
+    font-size: 2em;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: rgb(232, 216, 216);
+    border-radius: 25px;
+    background: radial-gradient(circle, lightgray, rgb(225, 13, 13));
+}
+
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: tan;
+}
+
+.nav-menu li {
+    margin: 0;
+    text-align: center;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding:14px 20px;
+    display: block; 
+}
+
+.nav-menu a:hover {
+    background-color: aqua;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-around;
+    background-color: #827f7f;
+}
+
+.flex-item {
+    background-color: #4CAF50;
+    color: aliceblue;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 1; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: #034e6a;
+    color: azure;
+    padding: 20px;
+    text-align: center;
+}

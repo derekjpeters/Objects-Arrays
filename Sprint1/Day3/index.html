@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			/*  console.log(Boolean(0)); //false
+        console.log(Boolean('Hello')); //true
+        console.log(Boolean('')); //false
+        console.log(Boolean([])); //true
+        console.log(Boolean(null)); //false
+        console.log(Boolean(1)); //true
+        console.log(Boolean(!-0)); //true */
+
+			let isActive = true;
+			console.log(isActive);
+			console.log(!isActive); //false
+			console.log(!0);
+
+			let greeting = "hello";
+
+			//AND Operator
+
+			console.log(true && true); //true
+			console.log(true && false); //false
+			console.log(0 && true); //false
+			console.log(1 && "Hello"); //true
+
+			console.log(false || true); //true
+			console.log(false || false); //false
+			console.log(0 || greeting);
+			console.log("" || false); //false null
+
+			console.log((!false && true) || (false && true)); //true
+
+			let myName = "Derek";
+			console.log(!!myName);
+
+			let truthyNumber = 1;
+			let truthyString = "hello";
+			let truthyArray = [];
+			let truthyObject = {};
+
+			let isWeekend = true;
+			let isHoliday = false;
+			let isSunny = true;
+			let isRaining = false;
+
+			console.log((isWeekend && isSunny) || isHoliday); //true
+
+			const string = "I am a string";
+			const num1 = 8;
+			const num2 = 0;
+
+			console.log((string && num1) || num2); //true
+
+			function weatherForecaster(temperature, humidity) {
+				// Check if temperature and humidity are numbers
+				if (typeof temperature !== "number" || typeof humidity !== "number") {
+					console.log(
+						"Invalid input: Temperature and humidity must be numbers"
+					);
+					return "Temperature and humidity must be numbers";
+				}
+
+				// Check if temperature is within range (-58°F to 122°F)
+				if (temperature < -58 || temperature > 122) {
+					console.log("Invalid temperature: Temperature out of range");
+					return "Temperature out of range";
+				}
+
+				// Check if humidity is within percentage range (0% to 100%)
+				if (humidity < 0 || humidity > 100) {
+					console.log("Invalid humidity: Humidity out of range");
+					return "Humidity out of range";
+				}
+
+				// Determine the weather forecast based on temperature and humidity
+				if (temperature > 86 && humidity > 70) {
+					console.log("Weather forecast: Expect a hot and humid day");
+					return "Expect a hot and humid day";
+				} else if (temperature < 32) {
+					console.log("Weather forecast: Prepare for freezing temperatures");
+					return "Prepare for freezing temperatures";
+				} else if (humidity < 30) {
+					console.log("Weather forecast: Dry conditions expected");
+					return "Dry conditions expected";
+				} else if (
+					temperature >= 60 &&
+					temperature <= 75 &&
+					humidity >= 40 &&
+					humidity <= 60
+				) {
+					console.log("Weather forecast: Ideal weather conditions");
+					return "Ideal weather conditions";
+				} else if (temperature >= 76 && temperature <= 85) {
+					console.log("Weather forecast: Warm weather ahead");
+					return "Warm weather ahead";
+				} else {
+					console.log("Weather forecast: Mild weather ahead");
+					return "Mild weather ahead";
+				}
+			}
+
+			// Test cases
+			console.log(weatherForecaster(95, 75)); // Expect a hot and humid day
+			console.log(weatherForecaster(20, 50)); // Prepare for freezing temperatures
+			console.log(weatherForecaster(85, 25)); // Dry conditions expected
+			console.log(weatherForecaster(70, 50)); // Ideal weather conditions
+			console.log(weatherForecaster(80, 50)); // Warm weather ahead
+			console.log(weatherForecaster(65, 50)); // Mild weather ahead
+			console.log(weatherForecaster("hot", 50)); // Temperature and humidity must be numbers
+			console.log(weatherForecaster(75, "humid")); // Temperature and humidity must be numbers
+			console.log(weatherForecaster(150, 50)); // Temperature out of range
+			console.log(weatherForecaster(75, 110)); // Humidity out of range
+		</script>
+	</body>
+</html>
