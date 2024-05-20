@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Conditional Coding</title>
+	</head>
+	<body>
+		<script>
+			/* if (condition){
+            //Code to be executed
+        } */
+
+			let age = 18;
+
+			if (age >= 19) {
+				console.log("You are an adult");
+			}
+
+			let score = 95;
+			let grade;
+
+			if (score >= 90) {
+				grade = "A";
+			} else if (score >= 80) {
+				grade = "B";
+			} else if (score >= 70) {
+				grade = "C";
+			} else {
+				grade = "F";
+			}
+
+			console.log(`Your grade is ${grade}`);
+
+			score = 85;
+
+			if (score >= 90) {
+				grade = "A";
+			} else if (score >= 80) {
+				grade = "B";
+			} else if (score >= 70) {
+				grade = "C";
+			} else {
+				grade = "F";
+			}
+
+			console.log(`Your grade is ${grade}`);
+			score = 75;
+			if (score >= 90) {
+				grade = "A";
+			} else if (score >= 80) {
+				grade = "B";
+			} else if (score >= 70) {
+				grade = "C";
+			} else {
+				grade = "F";
+			}
+			console.log(`Your grade is ${grade}`);
+
+			score = 65;
+
+			if (score >= 90) {
+				grade = "A";
+			} else if (score >= 80) {
+				grade = "B";
+			} else if (score >= 70) {
+				grade = "C";
+			} else {
+				grade = "F";
+			}
+			console.log(`Your grade is ${grade}`);
+
+			/* if (condition) {
+            //code here to be executed
+        } else if (condition2){
+            //code to be executed for condition 2
+        } else {
+            //code to be excuted if nothing is true
+        } */
+
+			function getGreeting(time) {
+				if (time < 10) {
+					return "Good Morning";
+				}else if (time < 18) {
+					return "good afternoon"
+				}else if (time > 18) {
+					return "good evening"
+				} else {
+                    return 'good night'
+                }
+			}
+            let time = 14;
+            time = 19;
+			let greeting = getGreeting(time);
+
+            console.log(greeting);
+
+            
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Functions</title>
+	</head>
+	<body>
+		<div id="myText">orginal text</div>
+		<script>
+			/* function functionName(parameters) {
+            //Code to be executed
+        } function(parameters); //invoke the function */
+
+			function greeting() {
+				console.log("Hello World");
+			}
+			greeting();
+
+			function favSong(song) {
+				console.log("Waez's favorite song is " + song);
+			}
+			favSong("Toxic");
+			favSong("What I got");
+			favSong("Party in the USA");
+
+			function changeText() {
+				document.getElementById("myText").innerHTML = "Text Changed";
+			}
+			changeText();
+
+			function squareRoot(num) {
+				//console.log (num ** (1/2));
+				return num ** (1 / 2);
+			}
+
+			const results = squareRoot(25);
+			console.log(results);
+
+			let myFavoriteBook = "The First 90 Days";
+			console.log(myFavoriteBook);
+			function updateBook(book) {
+				myFavoriteBook = book;
+				return myFavoriteBook;
+			}
+
+			const bookUpdate = updateBook("pride and predjudice");
+
+			console.log(bookUpdate);
+
+			function advBatteryCare(percentage) {
+				if (percentage === 0) return "Battery is Dead";
+				if (percentage === 100) return "Fully Charged";
+				if (percentage <= 20) return "Low Battery";
+				if (percentage > 80) return "Battery Saver Mode Activated";
+				return "Your battery is at " + percentage + " %.";
+			}
+
+			console.log(advBatteryCare(0));
+			console.log(advBatteryCare(100));
+			console.log(advBatteryCare(10));
+			console.log(advBatteryCare(20));
+			console.log(advBatteryCare(85));
+
+			const songNames = [];
+			const artistName = [];
+
+			function addToPlayList(songName, artistName) {
+				// Add the song name to the songNames array
+				songNames.push(songName);
+				// Add the artist name to the artistNames array
+				artistNames.push(artistName);
+
+				// Display the current playlist
+				displayPlayList();
+			}
+
+			function displayPlayList() {
+				console.log("Current Playlist:");
+				// Display songs based on the length of the songNames array
+				if (songNames.length === 1) {
+					displaySong(0);
+				} else if (songNames.length === 2) {
+					displaySong(0);
+					displaySong(1);
+				} else if (songNames.length === 3) {
+					displaySong(0);
+					displaySong(1);
+					displaySong(2);
+				}
+			}
+
+			function displaySong(index) {
+				// Log the song and artist at the given index
+				console.log(
+					index + 1 + ". " + songNames[index] + " by " + artistNames[index]
+				);
+			}
+
+			addToPlayList("Last Dance", "Tom Petty & The Heart Breakers");
+			addToPlayList("Shape of You", "Ed Sheeran");
+			addToPlayList("Blinding Lights", "The Weeknd");
+
+
+		</script>
+	</body>
+</html>
