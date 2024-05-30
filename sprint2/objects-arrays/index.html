@@ -15,7 +15,24 @@
 
         console.log(student);
         console.log(student.firstName); //dot notation
-        console.log(student['lastName']);
+        console.log(student['lastName']); //bracket notation
+        console.log(student.lastName);
+
+        student.lastName = "Ali"; //setting a property
+        console.log(student.lastName);
+
+        student.isStudent = !false;
+        console.log(student.isStudent);
+        console.log(student);
+        student.firstName = "Nico";
+        console.log(student);
+
+        let fruits = ['lemon', 'peach', 'kiwi', 'blueberry', 'pineapple'];
+        console.log(fruits);
+
+        console.log(fruits[2]);
+        console.log(fruits[4]);
+        console.log(fruits[0], fruits[3]);
 
     </script>
 </body>
