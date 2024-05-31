@@ -7,33 +7,72 @@
 </head>
 <body>
     <script>
-        let student = {
-          firstName: "Robert",
-          lastName: "Jank",
-          isStudent: true  
-        };
+        // let student = {
+        //   firstName: "Robert",
+        //   lastName: "Jank",
+        //   isStudent: true  
+        // };
 
-        console.log(student);
-        console.log(student.firstName); //dot notation
-        console.log(student['lastName']); //bracket notation
-        console.log(student.lastName);
+        // console.log(student);
+        // console.log(student.firstName); //dot notation
+        // console.log(student['lastName']); //bracket notation
+        // console.log(student.lastName);
 
-        student.lastName = "Ali"; //setting a property
-        console.log(student.lastName);
+        // student.lastName = "Ali"; //setting a property
+        // console.log(student.lastName);
 
-        student.isStudent = !false;
-        console.log(student.isStudent);
-        console.log(student);
-        student.firstName = "Nico";
-        console.log(student);
+        // student.isStudent = !false;
+        // console.log(student.isStudent);
+        // console.log(student);
+        // student.firstName = "Nico";
+        // console.log(student);
 
-        let fruits = ['lemon', 'peach', 'kiwi', 'blueberry', 'pineapple'];
-        console.log(fruits);
+        // let fruits = ['lemon', 'peach', 'kiwi', 'blueberry', 'pineapple'];
+        // let indexToRemove = 3;
+        // console.log(fruits);
 
-        console.log(fruits[2]);
-        console.log(fruits[4]);
-        console.log(fruits[0], fruits[3]);
+        // console.log(fruits[2]);
+        // console.log(fruits[4]);
+        // console.log(fruits[0], fruits[3]);
 
+        // fruits[2] = 'plum'; //Changes the second element
+
+        // console.log(fruits);
+
+        // fruits[5] = 'cheekoo';
+        // console.log(fruits);
+
+        // fruits.push = 'mango';
+        // console.log(fruits);
+
+        // console.log(fruits.length); //Get the length of the array
+        // // fruits.length = 2;
+        // // console.log(fruits);
+
+        // fruits.pop();
+        // let removedElement = fruits.splice(indexToRemove, 1); 
+        // console.log(fruits);
+
+        //create a function for building users
+        function buildUser(firstName, lastName, age) {
+            //Return object with properties
+            return {
+                firstName: firstName,
+                lastName: lastName,
+                age: age,
+                
+            };
+        }
+
+        const user1 = buildUser('John', 'Doe', 30);
+        const user2 = buildUser('Jane', 'Doe', 25);
+        const user3 = buildUser('Derek', 'Peters', 42);
+
+        console.log(user1);
+        console.log(user2);
+        console.log(user3);
+        console.log(buildUser);
+        
     </script>
 </body>
 </html>
