@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Looping</title>
+	</head>
+	<body>
+		<script>
+			//For loop 1. Initialization 2. Condition 3. Incrementation
+			const rainbowColors = [
+				"Red",
+				"Orange",
+				"Yellow",
+				"Green",
+				"Blue",
+				"Indigo",
+				"Violet",
+			];
+			for (let index in rainbowColors) {
+				console.log(index);
+			}
+			console.log(rainbowColors.length);
+			console.log(rainbowColors);
+
+			const kitchenItems = ["Knives", "Forks", "Vitamix", "Colander", "Peeler"];
+			for (let item in kitchenItems) {
+				console.log("I need to get a " + kitchenItems[item] + " at the store.");
+			}
+
+			const fakeProfile = {
+				name: "Thomas Jackson",
+				age: 27,
+				occupation: "Software Dev",
+			};
+
+			function propertyList() {
+				for (let property in fakeProfile) {
+					console.log(property);
+				}
+			}
+
+			propertyList();
+
+			function propertyAndValues() {
+				for (let property in fakeProfile) {
+					console.log(property + " : " + fakeProfile[property]);
+				}
+			}
+
+			propertyAndValues();
+
+			const targetNumber = 3;
+			let guess = null;
+
+			// while (guess !== targetNumber) {
+			//     guess = prompt ('Guess a number between 1 and 10'); // Simulate user input
+			//     guess = Number(guess);
+			//     // handle if user input is NaN
+
+			//     if (isNaN(guess)) {
+			//         console.log("That is not a number. Please Enter a valid Number");
+			//         continue;
+			//     }
+
+			//     if (guess === targetNumber) {
+			//         console.log("You have guessed the correct number");
+			//     } else {
+			//         console.log("Try Again");
+			//     }
+
+			// }
+
+			function sumNumFor(nums) {
+				let sum = 0;
+				for (let i = 0; i < nums.length; i++) {
+					if (nums[i] === 13) return "That is superstitious";
+					if (typeof nums[i] === "number") sum += nums[i];
+				}
+
+				return sum;
+			}
+
+			console.log(sumNumFor([1, 2, 18, 4]));
+
+			// for (let i = 10; i >= 1; i--) {
+			//     console.log(`${i}`);
+			// }
+
+			// let countDown = 10;
+			// while (countDown >= 0) {
+			//     console.log(countDown);
+			//     countDown--;
+			// }
+
+			let students = [
+				{ name: "Alice", grades: { math: 85, english: 92, science: 78 } },
+				{ name: "Bob", grades: { math: 89, english: 94, science: 88 } },
+				{ name: "Charlie", grades: { math: 95, english: 89, science: 91 } },
+			];
+            
+            // let totalGrades = {
+            //     math: 0,
+            //     english: 0,
+            //     science: 0
+            // };
+
+            //Iterate over each of the students
+            for (let i = 0; i < students.length; i++) {
+                let student = students[i];
+                let grades = student.grades;
+                let sum = 0;
+                let count = 0
+                //Sum grades and count them
+
+                for (let subject in grades) {
+                    sum += grades[subject];
+                    count++;
+                }
+
+                //Calc the average 
+                let average = sum / count;
+
+                console.log(`${student.name}'s average grade: ${average.toFixed(2)}`);
+                console.log(average);
+                console.log(grades);
+                
+           }
+
+           
+
+            
+
+		</script>
+	</body>
+</html>
