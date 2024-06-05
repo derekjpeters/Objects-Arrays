@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array's Playlist</title>
+</head>
+<body>
+    <script>
+        console.log("24w4's Playlist");
+        //Part 1: Use the push to add songs to the playlist
+        console.log("Part1: adding songs to the playlist");
+
+        const playList = [];
+        playList.push("Last Dance with Mary Jane");
+        playList.push("Sway");
+        playList.push("Broken Road");
+        playList.push("Beat It");
+        console.log("Songs in the playlist are: ", playList);
+
+        //Part 2: Use Pop to remove the songs from the playlist
+        console.log("Part2: Using pop to remove the songs from the playlist")
+
+        const removedSong = playList.pop();
+
+        console.log(removedSong + " has been removed from the playlist.");
+        console.log("Songs still in your playlis: ", playList);
+
+        const subPlayList = playList.slice(0, 2); //Using the slice method
+
+        console.log("Travel songs for your sub-playlist are: ", subPlayList);
+
+        console.log("Part 4: Let's find out where Song 2 is in the playlist.")
+
+        const songIndex = playList.indexOf("Broken Road");
+
+        console.log("Song 3 in the playlist is: ", songIndex + 1);
+
+        const animals = ['dogs', 'cats', 'reptiles', 'birds', 'fish', 'deer'];
+        //animals.pop();
+        const subArray = animals.slice(animals.indexOf('reptiles'), animals.indexOf('deer') + 1);
+        console.log(animals);
+        console.log(subArray);
+
+        const array = [1, 2, 3, 4, 5, 6];
+        const copyArray = array.slice();
+        console.log(array);
+       // array.pop();
+        console.log(array);
+        console.log(copyArray);
+        copyArray.push("I am a string");
+        let removed = copyArray.pop();     
+        console.log(copyArray);
+        console.log(typeof removed, removed);
+
+
+
+    </script>
+</body>
+</html>
