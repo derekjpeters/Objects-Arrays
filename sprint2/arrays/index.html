@@ -53,6 +53,23 @@
         console.log(copyArray);
         console.log(typeof removed, removed);
 
+        let users = [
+            {id: 1, name: 'Derek', email: 'derek@gmail.com'}
+        ];
+
+        //Functions to register new users
+        function registerUser(users, newUsers) {
+            users.push(newUsers);
+        }
+
+        function removeUsers(users) {
+            let removeUserPop = user.pop()
+            if (removeUserPop) {
+                return `user ${removeUserPop.name} removed successfully.`
+            } else {
+                return 'No user to remove'
+            }
+        }
 
 
     </script>

@@ -1,0 +1,87 @@
+/* CSS Reset - Meyerweb Reset or any preferred reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* Continue with reset styles... */
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    background-color: blue;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px 0 0;
+}
+
+nav ul li a {
+    color: yellow;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0 20px 0;
+}
+
+#about {
+    background-color: #FF8C00;
+    padding: 10px;
+    border: 2px solid #6495ED;
+    border-radius: 5px;
+}
+
+.services {
+    background-color: #6495ED;
+    padding: 10px;
+    border: 2px solid #FF8C00;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+footer p {
+    margin: 0;
+}
