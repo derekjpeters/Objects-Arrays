@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Objects</title>
+	</head>
+	<body>
+		<script>
+			let car = {
+				make: "Nissan",
+				model: "Maxima",
+				year: 2000,
+				startEngine: function () {
+					console.log(`${this.make} ${this.model}'s engine is starting...`);
+				},
+			};
+			car.startEngine();
+			console.log(car);
+
+			let person = {
+				name: "John",
+				age: 25,
+				introduce: function () {
+					console.log(`Hello, ${this.name}, thank you for logging in today`);
+				},
+				celebrateBirthday: function () {
+					this.age += 1;
+					console.log(`Happy Birthday! ${this.name} you are ${this.age} old.`);
+				},
+				logOut: function () {
+					console.log(
+						`Thank you, ${this.name} for visiting today. You have successfully logged out`
+					);
+				},
+			};
+
+			person.introduce();
+			person.celebrateBirthday();
+			person.logOut();
+
+			const baker = {
+				name: "Mary",
+				station: "bakery",
+				bake(name, bakedGood) {
+					return `${name} just baked ${bakedGood}.`;
+				},
+			};
+			//Display the result of the bake method
+			console.log(baker.bake(baker.name, "creme brulee"));
+
+			const knife = {
+				isSharp: true,
+				size: 7, //in inches
+				cut(food, seconds) {
+					return `Cut ${food} in ${seconds} seconds`;
+				},
+			};
+
+			console.log(knife.cut("Carrots", 3));
+
+			const alfredo = {
+				course: "entree",
+				type: "Italian",
+				serve(course, foodItem) {
+					return `${foodItem} will be the main ${course} for tonight's special`;
+				},
+			};
+
+			console.log(alfredo.serve(alfredo.course, "Alfredo"));
+
+            let host = {
+                name: "Thomas",
+                experience: "1 Year",
+                seating(tablenumber) {
+                    return `Table ${tablenumber} is now available`
+                }
+            };
+
+            console.log(host.seating(3));
+
+            const riverBoat = {
+                make: "flat boat",
+                model: "river warrior",
+                holds: 4,
+                destination(miles) {
+                    return `${this.make} will only hold ${this.holds} people and will travel for ${miles} miles.`
+                }
+            };
+
+            console.log(riverBoat.destination(25));
+
+		</script>
+	</body>
+</html>

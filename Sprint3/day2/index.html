@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			class userReg {
+				constructor(name, age) {
+					this.name = name;
+					this.age = age;
+				}
+				greet() {
+					console.log(
+						`Hello, my name is ${this.name} and I am ${this.age} years old.`
+					);
+				}
+			}
+
+			//Create an instance of a person or user
+
+			const user1 = new userReg("Ali", 21);
+			const user2 = new userReg("Loyd Christmas", 34);
+			user1.greet();
+			user2.greet();
+
+			class Car {
+				constructor(make, model, year, color) {
+					this.make = make;
+					this.model = model;
+					this.year = year;
+					this.color = color;
+				}
+
+				displayDetails() {
+					console.log(
+						`This truck is a ${this.year} ${this.make} ${this.model} and is a ${this.color}`
+					);
+				}
+			}
+
+			//Create  an instance of Car
+			const car1 = new Car("Chevy", "S10", 1988, "Black");
+			car1.displayDetails();
+
+			//Immutable value example
+			let name = "John";
+			name = "Doe"; //The string 'John is immutable, therefore 'Doe' is a new string
+
+			//Mutable value example
+			const person = {
+				name: "John",
+				age: 25,
+			};
+			person.age = 26; //The object 'person' is mutable, so the properties can change
+
+			class Book {
+				constructor(title, author, year) {
+					//immutable value is title and author
+					this.title = title;
+					this.author = author;
+					//mutable value is year
+					this.year = year;
+				}
+
+				//Method to update the year
+				updateYear(newYear) {
+					this.year = newYear;
+				}
+
+				//Method to generate a summary of the book
+				getSummary() {
+					console.log(
+						`${this.title} by ${this.author}, published in ${this.year}.`
+					);
+				}
+			}
+
+			//Create an instance of a book
+			const book1 = new Book("Long Walk to Freedom", "Nelson Mandella", 1995);
+			book1.getSummary();
+
+			book1.updateYear(2022);
+			book1.getSummary();
+
+			class Dog {
+				constructor(name, breed, age) {
+					this.name = name;
+					this.breed = breed;
+					this.age = age;
+				}
+
+				bark() {
+					return "bow wow";
+				}
+
+				play(toy) {
+					console.log (`${this.name} loves playing with ${toy}`);
+				}
+			}
+
+            let bubble = new Dog('Bubble', 'chihuahua papillon',9);
+            console.log(bubble);
+            bubble.play('ball');
+            console.log(bubble.bark());
+
+
+		</script>
+	</body>
+</html>

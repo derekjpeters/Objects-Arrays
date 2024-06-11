@@ -1,54 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vars</title>
-</head>
-<body>
-    <script>
-        let myAge = 50;
-        const myName = 'Ed';
-        console.log(myAge);
-        console.log(myName);
-        myAge = 42;
-        //myName = 'Derek';
-        console.log(myAge);
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Variables</title>
+	</head>
+	<body>
+		<script>
+			//Comparision Operators: ===, !==, >, <, >=, <=, ==
+			//Logical Operators && ||
+			let myAge = 41;
+			console.log(myAge);
+			myAge = 42;
+			console.log(myAge);
 
-        //==, ===, !=, !==, >,  <, >=, <=
+			const x = 10;
+			console.log(typeof x);
 
-        let myNumber = (5 == "5");
-        console.log(myNumber);
-        let myNumber2 = (5 === "5");
-        console.log(myNumber2);
-        nyNumber = (10 > 5);
-        console.log(myNumber);
-        myNumber2 = (5 > 10);
-        console.log(myNumber2);
-        const myString = ('hello' != 'world');
-        console.log(myString);
-        const myString2 = ('hello' !== 'world');
-        console.log(myString2);
+			const int1 = 2;
+			const int2 = 3;
+			const int3 = 4;
+			const isInt1SmallerOrEqualInt2 = int1 <= int2;
+			const isInt2SmallerOrEqualInt3 = int2 <= int3;
+			let results = isInt1SmallerOrEqualInt2 && isInt2SmallerOrEqualInt3;
 
-        let age = 17;
-        if (17 >= 18 && 17 < 21){
-            console.log('You are not old enough to drink');
-        }
+            console.log('isInt1SmallerOrEqualInt ' + isInt1SmallerOrEqualInt2);
 
-        let compare = (true && false);
-        console.log(compare);
-        compare = (5 > 3 || 2 > 4);
-        console.log(compare);
-        compare = (!(5 > 3));
-        console.log(compare);
+            console.log(results);
 
-        console.log(456000 === '456000');
+            let myNumber = (5 === '5');
+            console.log(myNumber);
+            let myNumber2 = (5 > 3);
+            console.log(myNumber2);
 
-        console.log(45 === "45") //false
-        console.log(45 == "45") //true
+            let myNumber3 = (0 == false);
+            console.log(myNumber3);
 
-        
+            let amt1 = 99;
+            let amt2 = '99';
+            let amt3 = 3;   
+            const areSameType = typeof amt1 === typeof amt2;
+            console.log(areSameType);
+            const isEitherOdd = amt1 % 2 !== 0|| amt2 % 2 !== 0;
+            console.log(isEitherOdd);
+            let result2 = areSameType || isEitherOdd || false;
+            console.log('result 2 after logical OR: ', result2);
+            //Subtract amt3 from result2
+            result2 -= amt3
+            console.log('result2 after subtraction ' + result2);
 
-    </script>
-</body>
+            let compare = (true && false);
+            console.log(compare);
+            compare = (5 > 3 || 2 > 4);
+            console.log(compare);
+            compare = (!(5 > 3));
+            console.log(compare);
+
+            let num1 = 5;
+            num1 += 10;
+            console.log(num1);
+
+            let compare2 = ((5 > 3) && (4 === 4));
+            console.log(compare2 + ' is the boolean type for this'); 
+
+            let myString = 'How to make a telephone. '
+            let myString2 = ' Connect two cans to a string and pull it tight.'
+
+            let compare3 = (typeof myString === typeof myString2);
+            console.log(compare3); 
+            console.log(myString + myString2);
+
+            
+
+
+
+		</script>
+	</body>
 </html>
