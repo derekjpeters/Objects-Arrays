@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Functions as Aruguments</title>
+	</head>
+	<body>
+		<script>
+			const users = [
+                {name: 'viking', itemsViewed: 5},
+                {name: 'medusa', itemsViewed: 12},
+                {name: 'spongebobcodingpants', itemsViewed: 7}
+            ];
+
+            let totalItemsViewed = 0;
+
+            users.forEach((user) => {
+                totalItemsViewed += user.itemsViewed;
+            });
+
+            console.log(`Total items viewed: ${totalItemsViewed}`);
+
+            const movies = [
+                {title: 'Inception', rating: 87},
+                {title: 'The Dark Knight', rating: 94},
+                {title: 'Twilight', rating: 49},
+                {title: 'Interstellar', rating: 73},
+                {title: 'Little Shop of Horrors', rating: 91},
+            ];
+
+            const highRatedMovies = movies.filter(movie => movie.rating >= 90);
+            console.log("High Rated Movies above 90% " , highRatedMovies);
+
+            const products = [
+                {name: 'Laptop', priceUSD: 1000},
+                {name: 'Phone', priceUSD: 500},
+                {name: 'Tablet', priceUSD: 300}
+            ];
+
+            const conversionRate = 0.93;
+            const productsInEUR = products.map(items => ({
+                name: items.name,
+                priceEUR: items.priceUSD * conversionRate
+            }));
+
+            console.log('Products in EUR', productsInEUR);
+
+            const groceryItems = [
+                {id: 1, name: 'Apple', price: 0.99, quantity: 10},
+                {id: 2, name: 'Banana', price: 0.59, quantity: 5},
+                {id: 3, name: 'Cherry', price: 2.99, quantity: 20}
+            ];
+
+            //filter out items with quanities greater than 5
+            const filteredItems = groceryItems.filter(grocery => grocery.quantity > 5);
+            console.log(filteredItems);
+            //use map to get total value (price * quanity) of each filtered item
+            const totalValueItems = filteredItems.map (grocery => {
+                return {
+                    name: grocery.name,
+                    totalValue: grocery.price * grocery.quantity
+                }
+            })
+            console.log(totalValueItems);
+            // forEach to log the total value of each item
+            totalValueItems.forEach(groceries => console.log(`${groceries.name}: $${groceries.totalValue.toFixed(2)}`))
+
+
+		</script>
+	</body>
+</html>

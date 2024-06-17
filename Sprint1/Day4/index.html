@@ -7,96 +7,110 @@
 	</head>
 	<body>
 		<script>
-			/* if (condition){
-            //Code to be executed
-        } */
-
-			let age = 18;
-
-			if (age >= 19) {
-				console.log("You are an adult");
+			let username = "depeters";
+			username = "";
+			//conditional statement if username is invalid or empty
+			if (username !== "") {
+				console.log("username is valid");
+			} else {
+				console.log("Username cannot be empty.");
 			}
+
+			let isLoggedIn = !true;
+			if (isLoggedIn !== false) {
+				document.write(`<h1> Welcome Back!</h1>`);
+			} else {
+				document.write("<h1> Please Log In </h1>");
+			}
+
+			let playerHealth = 0;
+			if (playerHealth <= 0) {
+				console.log("Game Over");
+			} else {
+				console.log("Player Health is Green");
+			}
+
+			let purchaseAmount = 150;
+			let deal;
+
+			if (purchaseAmount >= 200) {
+				deal = "You get 20% off your purchase";
+			}
+			if (purchaseAmount >= 100 && purchaseAmount < 200) {
+				deal = "Free Gift with Purchase";
+			}
+
+			if (purchaseAmount >= 50 && purchaseAmount < 100) {
+				deal = "Get 10% off your purchase";
+			}
+
+			if (purchaseAmount < 50) {
+				deal = "add more to cart for special deals";
+			}
+			console.log(deal);
+
+			/* if (condition to be met) {
+				//code to be executed
+			} else if (second condition to be met) {
+				code to be executed
+			} else if (if there is a third condition this is where you will put the 3rd condition to be met) {
+				code to be executed
+			} else {
+				if no conditions are true use else and this is where your code will go if no coniditions are met
+			} */
 
 			let score = 95;
 			let grade;
 
 			if (score >= 90) {
-				grade = "A";
-			} else if (score >= 80) {
-				grade = "B";
-			} else if (score >= 70) {
-				grade = "C";
+				grade = "A"
+			} else if (score >= 80 && score < 90) {
+				grade = "B"
+			} else if (score >=70 && score < 80) {
+				grade = "C"
 			} else {
-				grade = "F";
+				grade = "F"
 			}
-
-			console.log(`Your grade is ${grade}`);
+			console.log("Your Grade is ", grade);
 
 			score = 85;
-
+			
 			if (score >= 90) {
-				grade = "A";
-			} else if (score >= 80) {
-				grade = "B";
-			} else if (score >= 70) {
-				grade = "C";
+				grade = "A"
+			} else if (score >= 80 && score < 90) {
+				grade = "B"
+			} else if (score >=70 && score < 80) {
+				grade = "C"
 			} else {
-				grade = "F";
+				grade = "F"
 			}
+			console.log("Your Grade is ", grade);
 
-			console.log(`Your grade is ${grade}`);
 			score = 75;
+			
 			if (score >= 90) {
-				grade = "A";
-			} else if (score >= 80) {
-				grade = "B";
-			} else if (score >= 70) {
-				grade = "C";
+				grade = "A"
+			} else if (score >= 80 && score < 90) {
+				grade = "B"
+			} else if (score >=70 && score < 80) {
+				grade = "C"
 			} else {
-				grade = "F";
+				grade = "F"
 			}
-			console.log(`Your grade is ${grade}`);
+			console.log("Your Grade is ", grade);
 
 			score = 65;
-
+			
 			if (score >= 90) {
-				grade = "A";
-			} else if (score >= 80) {
-				grade = "B";
-			} else if (score >= 70) {
-				grade = "C";
+				grade = "A"
+			} else if (score >= 80 && score < 90) {
+				grade = "B"
+			} else if (score >=70 && score < 80) {
+				grade = "C"
 			} else {
-				grade = "F";
+				grade = "F"
 			}
-			console.log(`Your grade is ${grade}`);
-
-			/* if (condition) {
-            //code here to be executed
-        } else if (condition2){
-            //code to be executed for condition 2
-        } else {
-            //code to be excuted if nothing is true
-        } */
-
-			function getGreeting(time) {
-				if (time < 10) {
-					return "Good Morning";
-				}else if (time < 18) {
-					return "good afternoon"
-				}else if (time > 18) {
-					return "good evening"
-				} else {
-                    return 'good night'
-                }
-			}
-            let time = 14;
-            time = 19;
-			let greeting = getGreeting(time);
-
-            console.log(greeting);
-
-            
-
+			console.log("Your Grade is ", grade);
 
 		</script>
 	</body>
