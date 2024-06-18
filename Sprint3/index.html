@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object with properties
+        const person = {name: 'Alice', age: 30, city: 'New York'};
+        console.log(person);
+        //Destructuring into variables
+        const {name, age, city} = person;
+
+        //Logging the destructured variables
+        console.log(name);
+        console.log(age);
+        console.log(city);
+
+        const names = ['Christine', 'Karol', "Amelia", 'Irene'];
+
+        //Destructuring the array into variables
+        const [first, second, third, fourth] = names;
+
+        console.log(first); 
+        console.log(second);
+        console.log(third);
+        console.log(fourth);
+
+        //Function returning an object
+        function getFullName() {
+            return {firstName: 'Joe', lastName: 'Smoe'};
+        }
+
+        console.log(getFullName());
+
+        //Destructuring the returned object into a variable
+        let {firstName,lastName} = getFullName();
+
+        //log the destructured var
+
+        console.log(firstName); //output should be Joe
+        console.log(lastName); //output should be smoe
+
+        const orginalSandwich = ['bread', ['meat', 'cheese']];
+        console.log(orginalSandwich);
+        //Creating a shallow copy using the spread operator
+        const copySandwich = [...orginalSandwich];
+        console.log(copySandwich);
+        //Modify the shallow copy
+        copySandwich[1] = ['sauces'];
+        console.log(copySandwich);
+        console.log(orginalSandwich);
+
+        const cars = ['chevy', 'ford', 'tesla'];
+        //create a shallow copy
+        const copyCars = [...cars];
+        console.log(copyCars);
+        copyCars[1] = 'Dodge';
+        console.log(copyCars);
+
+        //Function using the ternary operator for a more conditional greeting
+        function greeting(name) {
+            return name ? `Hello, ${name}!` : 'Hello, user!';
+        }
+
+        //Test the function using different names
+        console.log(greeting('Jane'));
+        console.log(greeting('Jack'));
+        console.log(greeting(null));
+
+        let x = 10;
+        let y = (x > 5) ? 'Yes' : 'No';
+
+        console.log(y);
+
+        //Function to swap the first and last element of an array
+        function swapper(arr) {
+            //Check if the array has fewer than two elements
+            if (arr.length < 2) return "No swap performed";
+            // Perform the swap of the first and last element using destructuring 
+            [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
+
+            //return the modified array
+            return arr;
+        } 
+
+        //Test the function with different arrays
+        console.log(swapper([1])); //output 
+        console.log(swapper([4,9,19,21]));
+        console.log(swapper(['c','b','a']));
+        
+    </script>
+</body>
+</html>

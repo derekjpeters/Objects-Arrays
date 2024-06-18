@@ -6,101 +6,85 @@
 		<title>Functions</title>
 	</head>
 	<body>
-		<div id="myText">orginal text</div>
 		<script>
 			/* function functionName(parameters) {
-            //Code to be executed
-        } function(parameters); //invoke the function */
+				//Code to be executed
+			} 
+			function(parameters); //invoke the function */
 
-			function greeting() {
-				console.log("Hello World");
+			function personalAssistant() {
+				console.log("Hello! I am the personal assistant function");
+				console.log("I can assist in various tasks");
 			}
-			greeting();
+			personalAssistant();
 
-			function favSong(song) {
-				console.log("Waez's favorite song is " + song);
-			}
-			favSong("Toxic");
-			favSong("What I got");
-			favSong("Party in the USA");
+			const handleTask = function () {
+				console.log("Handling task...");
+			};
+			handleTask();
 
-			function changeText() {
-				document.getElementById("myText").innerHTML = "Text Changed";
-			}
-			changeText();
-
-			function squareRoot(num) {
-				//console.log (num ** (1/2));
-				return num ** (1 / 2);
+			function calculateSum(a, b) {
+				const sum = a + b;
+				console.log("Sum is: " + sum);
+				return sum;
 			}
 
-			const results = squareRoot(25);
-			console.log(results);
+			const result = calculateSum(10, 5);
+			console.log(result);
+			console.log(calculateSum(5, 10));
 
-			let myFavoriteBook = "The First 90 Days";
-			console.log(myFavoriteBook);
-			function updateBook(book) {
-				myFavoriteBook = book;
-				return myFavoriteBook;
+			let taskStatus = "Incomplete";
+			console.log("Task status is: " + taskStatus);
+
+			function updateStatus(newStatus) {
+				taskStatus = newStatus;
+				console.log("Task Status: " + taskStatus);
 			}
 
-			const bookUpdate = updateBook("pride and predjudice");
+			updateStatus("Backlog");
+			updateStatus("Refined");
+			updateStatus("In Progress");
+			updateStatus("Pending Information");
+			updateStatus("Complete");
 
-			console.log(bookUpdate);
+			function advanceTaskManager(task, status) {
+				if (task === "homework" && status === "incomplete") {
+					console.log("Checking Condition: Homework is incomplete");
+					return "You need to complete your homework";
+				}
+				if (task === "homework" && status === "complete") {
+					console.log("Checking Condition: Homework is complete");
+					return "Great Job! You are complete with your homework";
+				}
+				if (task === "exercise" && status === "incomplete") {
+					console.log("Checking Condition: Exercise is not complete");
+					return "Exercise is not complete";
+				}
+				if (task === "exercise" && status === "complete") {
+					console.log("Checking Condition: Exercise is complete");
+					return "Excercise is complete, GREAT JOB!";
+				}
+			}
+			advanceTaskManager("exercise", "incomplete");
+			advanceTaskManager("exercise", "complete");
+			advanceTaskManager("homework", "incomplete");
+			advanceTaskManager("homework", "complete");
 
 			function advBatteryCare(percentage) {
+				console.log("Your Battery is at " + percentage + "%");
 				if (percentage === 0) return "Battery is Dead";
-				if (percentage === 100) return "Fully Charged";
-				if (percentage <= 20) return "Low Battery";
-				if (percentage > 80) return "Battery Saver Mode Activated";
-				return "Your battery is at " + percentage + " %.";
+				if (percentage === 100) return "Battery is full";
+				if (percentage <= 20) return "Please Plug in your Device";
+				if (percentage > 85) return "Battery almost full";
+				
+				return "Your Battery is at " + percentage + "%";
 			}
 
 			console.log(advBatteryCare(0));
 			console.log(advBatteryCare(100));
 			console.log(advBatteryCare(10));
+			console.log(advBatteryCare(90));
 			console.log(advBatteryCare(20));
-			console.log(advBatteryCare(85));
-
-			const songNames = [];
-			const artistName = [];
-
-			function addToPlayList(songName, artistName) {
-				// Add the song name to the songNames array
-				songNames.push(songName);
-				// Add the artist name to the artistNames array
-				artistNames.push(artistName);
-
-				// Display the current playlist
-				displayPlayList();
-			}
-
-			function displayPlayList() {
-				console.log("Current Playlist:");
-				// Display songs based on the length of the songNames array
-				if (songNames.length === 1) {
-					displaySong(0);
-				} else if (songNames.length === 2) {
-					displaySong(0);
-					displaySong(1);
-				} else if (songNames.length === 3) {
-					displaySong(0);
-					displaySong(1);
-					displaySong(2);
-				}
-			}
-
-			function displaySong(index) {
-				// Log the song and artist at the given index
-				console.log(
-					index + 1 + ". " + songNames[index] + " by " + artistNames[index]
-				);
-			}
-
-			addToPlayList("Last Dance", "Tom Petty & The Heart Breakers");
-			addToPlayList("Shape of You", "Ed Sheeran");
-			addToPlayList("Blinding Lights", "The Weeknd");
-
 
 		</script>
 	</body>
