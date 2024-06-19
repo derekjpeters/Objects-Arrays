@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shopping Cart</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f4f4f4;
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				width: 80%;
+				margin: auto;
+				overflow: hidden;
+			}
+			header {
+				background: #333;
+				color: #fff;
+				padding-top: 30px;
+				min-height: 70px;
+				border-bottom: #77aaff 3px solid;
+			}
+			header h1 {
+				text-align: center;
+				text-transform: uppercase;
+				margin: 0;
+				font-size: 24px;
+			}
+			.main {
+				padding: 20px;
+				background: #fff;
+				margin-top: 20px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+			.form-group {
+				margin-bottom: 15px;
+			}
+			.form-group label {
+				display: block;
+				margin-bottom: 5px;
+			}
+			.form-group input {
+				width: 100%;
+				padding: 10px;
+				box-sizing: border-box;
+			}
+			button {
+				display: inline-block;
+				background: #333;
+				color: #fff;
+				padding: 10px 20px;
+				text-decoration: none;
+				border: none;
+				cursor: pointer;
+			}
+			button:hover {
+				background: #555;
+			}
+			.summary {
+				margin-top: 20px;
+			}
+			.summary pre {
+				background: #f4f4f4;
+				padding: 20px;
+				border: 1px solid #ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1>Shopping Cart</h1>
+			</div>
+		</header>
+		<div class="container">
+			<div class="main">
+				<div class="form-group">
+					<label for="item-name">Item Name:</label>
+					<input type="text" id="item-name" />
+				</div>
+				<div class="form-group">
+					<label for="item-price">Item Price:</label>
+					<input type="number" id="item-price" />
+				</div>
+				<button onclick="addToCart()">Add Item</button>
+				<div class="summary">
+					<h2>Cart Summary:</h2>
+					<pre id="cart-summary"></pre>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Initialize an empty shopping cart array
+			let shoppingCart = [];
+
+			// Function to add an item to the cart
+			function addItem(cart, itemName, itemPrice) {
+				// Format the item name: trim whitespace, convert to lowercase, and capitalize the first letter
+				let formattedName = itemName
+					.trim()
+					.toLowerCase()
+					.replace(/^\w/, (c) => c.toUpperCase());
+				// Add the formatted item to the cart array
+				cart.push({ name: formattedName, price: itemPrice });
+				// Log the added item to the console
+				console.log(`Item added: ${formattedName} - $${itemPrice.toFixed(2)}`);
+			}
+
+			// Function to calculate the total cost of items in the cart
+			function calculateTotal(cart) {
+				let total = 0; // Initialize total cost to 0
+				// Iterate over each item in the cart
+				for (let item of cart) {
+					total += item.price; // Add the item's price to the total
+				}
+				return total; // Return the total cost
+			}
+
+			// Function to generate a summary of the cart's contents
+			function generateSummary(cart) {
+				let summary = "Summary:\n"; // Initialize the summary string
+				// Iterate over each item in the cart
+				cart.forEach((item, index) => {
+					// Add the item's details to the summary string
+					summary += `${index + 1}. ${item.name} - $${item.price.toFixed(2)}\n`;
+				});
+				// Calculate the total cost of the cart
+				let total = calculateTotal(cart);
+				// Add the total cost to the summary string
+				summary += `The total cost is $${total.toFixed(2)}.`;
+				return summary; // Return the summary string
+			}
+
+			// Function to handle adding an item to the cart and updating the summary
+			function addToCart() {
+				// Get the item name and price from the input fields
+				let itemName = document.getElementById("item-name").value;
+				let itemPrice = parseFloat(document.getElementById("item-price").value);
+				// Check if the item name is not empty and the item price is a valid number
+				if (itemName && !isNaN(itemPrice)) {
+					// Add the item to the shopping cart
+					addItem(shoppingCart, itemName, itemPrice);
+					// Generate the updated cart summary
+					let cartSummary = generateSummary(shoppingCart);
+					// Display the updated cart summary in the summary <pre> element
+					document.getElementById("cart-summary").textContent = cartSummary;
+				} else {
+					// Alert the user if the input is invalid
+					alert("Please enter a valid item name and price.");
+				}
+			}
+		</script>
+	</body>
+</html>

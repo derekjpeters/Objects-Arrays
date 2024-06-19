@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Code</title>
+</head>
+<body>
+
+    <button id="myButton">Click Me!</button>
+    <button id="myRocket">Start Countdown</button>
+    <p id="timerDisplay">5</p>
+
+    <script>
+        //Synchronous Code
+        //console.log('Start');
+        // for (let i = 0; i <1e9; i++) {} //simulates a long task
+        // console.log('End');
+
+        // //Asynchronous Code
+        // console.log('Start');
+        // setTimeout(() => {
+        //     console.log('End');
+        // },1000)
+
+        //setTimeout(function, delay)
+
+        console.log('Hello');
+        setTimeout(() => {
+            console.log('Hello, World');
+        }, 1000);
+        console.log('JavaScript');
+
+        function timerExample(){
+            console.log('Starting Timer');
+            //Set a timeout that logs a message after 3 seconds
+            setTimeout(() => {
+                console.log('Time is Up!')
+            }, 4000);
+        }
+
+        //Call the function to start the timer
+        timerExample();
+
+        //select the button element and add a click event listener
+        document.getElementById('myButton').addEventListener('click', () => {
+            console.log('Button was clicked!');//Log a message to the console
+        });
+
+        //Add an event listener to the start button
+        document.getElementById("myRocket").addEventListener('click', () => {
+            //Initialize the countdown value
+            let countdown = 5;
+            //Select the timer display element
+            const timerDisplay = document.getElementById('timerDisplay');
+            //Set the initial countdown in the display
+            timerDisplay.textContent = countdown;
+            //Create an interval to update the countdown every second
+            const countDownInterval = setInterval(() => {
+                countdown--; //Decrement to the countdown value
+                timerDisplay.textContent = countdown; //Update the Display
+                if (countdown <= 0) {
+                    clearInterval(countDownInterval);// Clear the interval when the countdown reaches 0
+                    console.log("Blast Off!!!!!"); //log the message
+                }
+            },2000); //1 second interval
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Functions & Interpolation</title>
+	</head>
+	<body>
+		<script>
+			//function functionName(parameters) { return value;};
+
+			// function sayHello() {
+			//     return "Hello JavaScript";
+			// }
+
+			// console.log(sayHello());
+
+			// //function to return a and b
+			// function add(a, b) {
+			//     return a + b;
+			// }
+
+			// let result = add(5,3); //result should be 8
+			// console.log(result);
+
+			// function greet(name) {
+			//     console.log ('Hello ' + name + '!');
+			// }
+
+			// greet('Sean');
+			// greet('Burcu');
+
+			// //an example of string Interpolation
+			// let variable = "World";
+			// let message = `Hello, ${variable}`;
+			// console.log(message);
+
+			// let firstName = 'Jane';
+			// let lastName = 'Doe';
+			// let fullNameGreetingInterpolation = `Welcome, ${firstName} ${lastName}`;
+			// let greetingCon = 'Welcome ' + firstName + " " + lastName + "!";
+
+			// console.log(fullNameGreetingInterpolation);
+			// console.log(greetingCon);
+
+			// let firstName2 = 'Clenny';
+			// let age = 18;
+			// let greeting3 = `Welcome, ${firstName2}! ${firstName2} is ${age} years old`;
+
+			// console.log(greeting3);
+
+			function introduce(firstName, lastName) {
+				return `Hello, thank you for visiting ${firstName} ${lastName}!`;
+			}
+
+			let introduction = introduce("Clenny", "Minor");
+			console.log(introduce("Clenny", "Minor"));
+			console.log(introduce("Sean", "Peltekci"));
+
+			// length, toUpperCase(), toLowerCase(), trim(), slice(start,end)
+			let message = "Hello, JavaScript and World        ";
+			console.log(message);
+			console.log(message.length);
+			console.log(message.trim());
+			console.log(message.toUpperCase());
+			console.log(message.toLowerCase());
+			console.log(message.slice(0, 17));
+
+            function processString(str){
+                return str.trim().toUpperCase().slice(7);
+            }
+
+            let processed = processString("   Hello, JavaScript!    ");
+            console.log(processed);
+
+		</script>
+	</body>
+</html>
