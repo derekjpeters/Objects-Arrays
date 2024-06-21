@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HTML Lesson</title>
+		<link rel="stylesheet" href="/sprint1/day7/style.css">
+        <style>
+            /* Styling the body */
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 20px;
+                background-color: #FFCA33;
+                color: #4C4941;
+            }
+            /*Styling the header*/
+            header {
+                background: lightskyblue;
+                color: black;
+                padding: 20px 0;
+                text-align: center;
+                border:2px solid black;
+            }
+            header h1{
+                margin-bottom: 10px;
+                font-size: large;
+            }
+            header nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            header nav ul li {
+                display: inline;
+                margin: 10px;
+                color: #fff;
+            }
+            header nav ul li a:hover {
+                text-decoration: underline;
+            }
+
+            /* style to the main section */
+            main {
+                margin: 20px;
+            }
+            main section {
+                margin: 20px;
+            }
+            main article {
+                background: #eee;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+            /* the footer */
+
+            footer {
+                background: #eee;
+                color: black;
+                padding: 20px;
+                text-align: center;
+            }
+
+            footer p{
+                color: blue;
+                margin-bottom: 5px;
+            }
+
+
+
+            
+
+
+        </style>
+	</head>
+	<body>
+		<header>
+			<h1>Your Local Library</h1>
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li>About</li>
+					<li>Blog</li>
+					<li>Contact</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<article>
+					<p>Join us on Tuesdays for Harry Potter night!</p>
+				</article>
+				<h2>About</h2>
+				<p>Learn more about the history of our local library</p>
+			</section>
+			<article>
+				<h2>Upcoming Events</h2>
+				<p>Join us for the upcoming book fair</p>
+			</article>
+		</main>
+		<footer>
+			<p>Library hours and locations</p>
+			<form>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" />
+			</form>
+		</footer>
+	</body>
+</html>

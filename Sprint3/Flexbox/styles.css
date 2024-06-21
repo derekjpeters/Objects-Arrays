@@ -1,71 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
+	font-family: Arial, Helvetica, sans-serif;
+	display: flex; /* Enable flexbox for the body layout*/
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #05A4C7;
 }
 
-/* Getting our Flex Items Setup */
+/* Container for the flex items*/
 .flex-container {
     display: flex;
     width: 80%;
-    height: 300px;
-    border: 2px solid #333;
-    background-color: #e0e0e0;
+    height:300px;
+    border: 2px solid red;
+    background-color: aliceblue;
     margin-bottom: 20px;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
-    transition: all  0.5s ease;
+    transition: all 1s ease;
 }
 
-/* Flex Items Setup */
-.flex-item {
+.flex-item{
     width: 50px;
     height: 50px;
-    background-color: green;
-    color: white;
+    background-color: brown;
+    color: #eee;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     margin: 5px;
-    font-size: 20px;
-    flex: 1; /* Allow items to grow and fill space */
-    transition: all 0.5s ease;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    box-shadow: 2px 2px 5px rgba (0,0,0,0.2);
 }
 
-.flex-item:nth-child(even){
+.flex-item:nth-child(even) {
     background-color: darkblue;
 }
 
-.controls button {
+.controls button{
     margin: 10px;
     padding: 10px 20px;
     font-size: 12px;
     cursor: pointer;
     background-color: yellow;
     color: black;
-    border-radius: 5px;
-    transition:all 0.3s ease;
-   /* background: repeating-linear-gradient(#f6e33c, #dfe3e4 50px); */
-    
-    overflow: hidden;
+    border-radius: 5px;  
+    transition: all 1s ease;
+    overflow: hidden;  
 }
 
-.controls button:active { box-shadow : 0 2px #1B5E20; transform: translateY(2px); }
+.controls button:active{
+    box-shadow: 0 2px #13213C;
+    transform: translateY(2px);
+}
 
 .controls button:hover {
-    background-color: #767474;
+    background-color: aquamarine;
 }
 
-.controls {
+.controls{
     display: flex;
     justify-content: center;
 }
