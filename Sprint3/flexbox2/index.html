@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Intro to Flexbox</title>
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				margin: 20px;
+			}
+			.code-block {
+				background-color: #f4f4f4;
+				border-left: 5px solid #ccc;
+				padding: 10px;
+				margin: 10px;
+			}
+
+			.parent {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100px;
+				background-color: lightblue;
+			}
+
+			.container {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				height: 100px;
+				background-color: lightgreen;
+			}
+			.item {
+				align-self: flex-end;
+				height: 50px;
+				background-color: lightcoral;
+				margin: 5px;
+			}
+
+			.footer-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: row;
+				background-color: yellow;
+				height: 100px;
+			}
+			.box {
+				width: 50px;
+				height: 50px;
+				background-color: pink;
+				margin: 10px;
+				justify-content: center;
+				align-items: center;
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Intro to Flexbox</h1>
+
+		<h2>Core Competencies</h2>
+		<ul>
+			<li>The flex container</li>
+			<li>Distributing flex items along the main axis</li>
+			<li>Distributing flex items along the cross axis</li>
+			<li>Flex items</li>
+		</ul>
+
+		<h3>The flex container</h3>
+		<p>
+			Imagine you're a web developer for a high-traffic e-commerce site. With
+			Black Friday approaching, your team decides to revamp the product listings
+			to make them more appealing and accessible on various devices. Utilizing
+			Flexbox, you can quickly create a responsive and organized layout to
+			showcase products effectively, ensuring a seamless shopping experience.
+		</p>
+		<div class="code-block">
+			<p>Code:</p>
+			<pre>
+    div.parent {
+      display: flex; /* Defines the element as a flex container */
+      justify-content: center; /* Centers items horizontally within the container */
+      align-items: center; /* Centers items vertically within the container */
+    }
+            </pre
+			>
+		</div>
+		<div class="parent">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+		</div>
+
+		<h3>Distributing flex items along the main axis</h3>
+		<p>
+			As a front-end developer at a tech startup, you're told to design a user
+			dashboard where notifications, messages, and daily tasks must be evenly
+			spaced for an intuitive user interface. With Flexbox's 'justify-content'
+			property, you efficiently implement this design, optimizing user
+			experience and workflow.
+		</p>
+		<div class="code-block">
+			<p>Code:</p>
+			<pre>
+    div.container {
+      display: flex; /* Defines the element as a flex container */
+      justify-content: space-around; /* Distributes items evenly with space around them */
+    }
+            </pre
+			>
+		</div>
+		<div class="container">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+		</div>
+
+		<h3>Flex items</h3>
+		<p>
+			While working on a media website, you must format article previews so
+			images align to the top and the text to the bottom within their
+			containers. By understanding and manipulating flex item properties, you
+			set each item's alignment individually to achieve the desired layout.
+		</p>
+		<div class="code-block">
+			<p>Code:</p>
+			<pre>
+    div.item {
+      align-self: flex-end; /* Overrides the align-items property to align this item to the end of the container's cross axis */
+    }
+            </pre
+			>
+		</div>
+		<div class="container">
+			<div class="item">1</div>
+			<div class="item">2</div>
+			<div class="item">3</div>
+		</div>
+
+		<h3>Distributing flex items along the cross axis</h3>
+		<p>
+			Your client has tasked you with creating a promotional web banner with
+			text and images that need to be centered within a horizontal layout. With
+			the understanding of the cross axis in Flexbox, you can quickly center
+			items vertically, adjusting even when additional text or images are added.
+		</p>
+		<div class="code-block">
+			<p>Code:</p>
+			<pre>
+    div.container {
+      display: flex; /* Defines the element as a flex container */
+      align-items: center; /* Centers items vertically within the container */
+    }
+            </pre
+			>
+		</div>
+		<div class="container" style="height: 150px">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+		</div>
+
+		<h3>The flex container (footer example)</h3>
+		<p>
+			You are designing a footer for a website where various links must be
+			spaced out evenly. Your challenge is to create a layout that works across
+			different screen sizes and aligns elements neatly, which can be typically
+			challenging. By utilizing Flexbox properties on the container, you create
+			a responsive footer that maintains its structure and spacing no matter the
+			screen size.
+		</p>
+		<div class="code-block">
+			<p>Code:</p>
+			<pre>
+    div.footer-container {
+      display: flex; /* Defines the element as a flex container */
+      flex-direction: row; /* Aligns items in a row (default flex direction) */
+    }
+            </pre
+			>
+		</div>
+		<div class="footer-container">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+		</div>
+
+		<h2>Sprint Challenge Preview</h2>
+		<div class="code-block">
+			<p>Example solution for Task 1:</p>
+			<pre>
+    div.main-container {
+      display: flex; /* Defines the element as a flex container */
+      justify-content: flex-start; /* Aligns items to the start of the main axis */
+    }
+            </pre
+			>
+		</div>
+		<div class="main-container">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+		</div>
+
+		<script>
+			class Person {
+				constructor(name, age) {
+					this.name = name;
+					this.age = age;
+				}
+				greet() {
+					console.log(`Hello, my name is ${this.name} and I am ${this.age} years old`);
+				}
+			}
+
+			//Example of a person class
+			const person1 = new Person("Alice", 30);
+			console.log(person1);
+            person1.greet();
+		</script>
+	</body>
+</html>

@@ -7,70 +7,79 @@
 </head>
 <body>
     <script>
-        console.log("24w4's Playlist");
-        //Part 1: Use the push to add songs to the playlist
-        console.log("Part1: adding songs to the playlist");
-
+        console.log("24w5 Playlist:");
         const playList = [];
-        playList.push("Last Dance with Mary Jane");
-        playList.push("Sway");
-        playList.push("Broken Road");
-        playList.push("Beat It");
+        playList.push("Wheels on the Bus");
+        playList.push("Toxic");
+        playList.push("Medusa");
+        playList.push("Thriller");
+        playList.push("Believer");
         console.log("Songs in the playlist are: ", playList);
 
-        //Part 2: Use Pop to remove the songs from the playlist
-        console.log("Part2: Using pop to remove the songs from the playlist")
+        console.log(playList.length);
 
-        const removedSong = playList.pop();
+        console.log("Part 2: Using Pop to remove song from the playlist.")
 
-        console.log(removedSong + " has been removed from the playlist.");
-        console.log("Songs still in your playlis: ", playList);
+        const removedSong = playList.pop(); //removes last song from playlist
 
-        const subPlayList = playList.slice(0, 2); //Using the slice method
+        console.log(removedSong + " Has been removed from your playlist");
+        console.log(playList);
+        console.log(playList.length);
 
-        console.log("Travel songs for your sub-playlist are: ", subPlayList);
+        const subPlayList = playList.slice(1,3);
+        const subPlayList1 = playList.slice(0,3);
+        const subPlayList2 = playList.slice(1,4);
 
-        console.log("Part 4: Let's find out where Song 2 is in the playlist.")
+        console.log(subPlayList + " Travel songs for the road");
+        console.log(subPlayList1 + " Songs for the gym");
+        console.log(subPlayList2 + " Songs for home!");
 
-        const songIndex = playList.indexOf("Broken Road");
-
-        console.log("Song 3 in the playlist is: ", songIndex + 1);
-
-        const animals = ['dogs', 'cats', 'reptiles', 'birds', 'fish', 'deer'];
-        //animals.pop();
-        const subArray = animals.slice(animals.indexOf('reptiles'), animals.indexOf('deer') + 1);
-        console.log(animals);
-        console.log(subArray);
+        const songIndex = playList.indexOf("Medusa");
+        console.log(`Song 1 of the index is : ${songIndex - 2}`);
+        console.log(`Song 2 of the index is : ${songIndex - 1}`);
 
         const array = [1, 2, 3, 4, 5, 6];
-        const copyArray = array.slice();
         console.log(array);
-       // array.pop();
-        console.log(array);
+        const copyArray = array.slice()
+        copyArray.pop();
         console.log(copyArray);
         copyArray.push("I am a string");
-        let removed = copyArray.pop();     
         console.log(copyArray);
-        console.log(typeof removed, removed);
+        copyArray.pop();
+        console.log(copyArray);
+        console.log(typeof copyArray);
 
-        let users = [
-            {id: 1, name: 'Derek', email: 'derek@gmail.com'}
+        let user = [
+            {id:1, name: 'Derek', email: 'derek@gmail.com'}
         ];
+        let removedUser = [];
 
-        //Functions to register new users
-        function registerUser(users, newUsers) {
-            users.push(newUsers);
+        //Function to create a new user
+        function registerUser(user, newUser) {
+            user.push(newUser);
         }
+        console.log(user);
+        //Adding a new user for registration
 
-        function removeUsers(users) {
-            let removeUserPop = user.pop()
+        let newUser = {id: 2, name:'Jacob', email: 'Jacob@email.com'};
+        registerUser(user, newUser);
+        console.log(user);
+        
+        function removeUsers(user) {
+            let removeUserPop = user.pop();
             if (removeUserPop) {
-                return `user ${removeUserPop.name} removed successfully.`
+                removedUser.push(removeUserPop);
+                return `${removeUserPop.name} has been removed succesfully.`;
             } else {
-                return 'No user to remove'
+                return 'No user to remove';
             }
         }
 
+        //Remove the user logging the results
+        console.log(removeUsers(user));
+        console.log(user);
+        console.log('Users that have been removed ', removedUser);
+        console.log(user);
 
     </script>
 </body>
