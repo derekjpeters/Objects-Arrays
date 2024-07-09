@@ -3,83 +3,108 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>For While RPG</title>
+		<title>For While Loops</title>
 	</head>
 	<body>
 		<script>
-			/* for (initialization; condition; increment or decrement) {
-            code to executed
-        } */
-
-			// for (i = 0; i < 10; i++) {
-			//     console.log(i);
-			// }
-
-			//Intializtion: i=0
-			// Condition: i < 10
-			// Increment: i++
+			/* for (initialization; condition; increment/decrement){
+				Code to be executed
+			} */
 
 			/* while (condition) {
-            code to be executed
-        } */
+				Code to be executed
+			} */
 
-			// let i = 0;
+			// for (let i = 0; i < 5; i++) {
+			// 	console.log(i);
+			// }
+
+			// let i = 1;
 			// while (i <= 10) {
+			// 	console.log("Iteration number " + i);
+			// 	i++;
+			// }
+
+			// for (let i = 1; i <= 3; i++){
+			// 	for (let j=1; j<= 3; j++){
+			// 		console.log (`i = ${i}, j = ${j}`);
+			// 	}
+			// }
+			
+			// const fruits = ["Apple", 'Banana', 'Cherry'];
+			// console.log(fruits);
+			// for (let i = 0; i < fruits.length; i++) {
+			// 	console.log(fruits[i]);
+			// }
+			// i = 1; 
+			// function incrementLoop (){
+			// 	while (i < 10) {
+			// 		console.log(i);
+			// 		if (i % 2 === 0) {
+			// 			console.log ('i is even, incrementing by 2')
+			// 			i += 2 //Increment by 2 if the number is even
+			// 		} else {
+			// 			i++; //Increment by 1 if i is odd
+			// 			console.log('i is odd incrementing by 1');
+			// 		} console.log('Value of i after increment ', i);
+					
+			// 	}
+			// }
+			// incrementLoop();
+
+			// i = 0;
+			// while (i < 5) {
 			// 	console.log(i);
 			// 	i++;
 			// }
 
-			// initialization is a variable of i = 0
-			// condition i <= 10
-			//increment is in my code  must be handled manually within the loop
-            // i = 3;
-			// function incrementLoop() {
-			// 	while (i < 10) {
-			// 		console.log(i);
-			// 		if (i % 2 === 0) {
-            //             console.log('i is even, incrementing by 2')
-			// 			i += 2; //Increment by 2 if the number is even
-			// 		} else {
-			// 			i++; //Increment by 1 if i is odd
-            //             console.log('i is odd incrementing by 1')
-			// 		}
-            //         console.log('Value of i after increment', i);
-			// 	}
+			// for (let i = 2; i < 5;i++){
+			// 	console.log(i);
 			// }
 
-            let characters = ['cloud', 'archer', 'mage'];
-            let stats = ['Strength', 'Intelligence', 'Dexterity'];
+			// let numbers = [1, 2, 3, 4, 5];
+			// for (let i = 0; i<numbers.length; i++) {
+			// 	console.log(numbers[i]);
+			// }
 
-            console.log('Console RPG Character Stat Generator:');
+			let characters = ['Master Chief', 'Archer', 'Wizard'];
+			let stats = ['Strength', 'Intelligence', 'Dexterity'];
+			//Print the header for the RPG:
+			console.log('Console RPG Character Stats Generator');
 
-            for (let i = 0; i < characters.length; i++) {
-                console.log(`${characters[i]} stats`); // print the character type
-                // use j for the stats
-                for (j=0; j < stats.length; j++) {
-                    let setValue = Math.floor(Math.random () * 10) +1; //generate a random number between 10 and 1 for stats
-                    console.log(` ${stats[j]}: ${setValue}`);
-                }
-            }
+			//Loop through each character in the array
+			for (let i = 0; i < characters.length; i++) {
+				//Print the current character's name followed by thier stats
+				console.log(`${characters[i]} stats`);
+				//nested loop thorugh each stat in the stats array
+				for (let j = 0; j < stats.length; j++) {
+					//Generate Random numbers between 1 - 10
+					let setValue = Math.floor(Math.random() * 10) + 1;
+					// Print the stat name and it's random value
+					console.log(`${stats[j]}, ${setValue}`);
+				}
+			}
 
-            let rpgBattle = {
-                playerHealth: 20, //Player starts at 20
-                enemyHealth: 20, //Enemy Health
-                battle: function() {
-                    console.log('Console RPG Battle Loop'); //Indicates that the loop is starting
-                    while(this.playerHealth > 0 && this.enemyHealth > 0) {
-                        let playerAttack = Math.floor(Math.random() * 5) + 1; //Generate damage from 1 to 5 against the 20
-                        console.log(`Player attachs for ${playerAttack} damage!: `); 
-                        this.enemyHealth -= playerAttack //subtracts from the enemy health
-                        console.log(`Enemy Health: ${this.enemyHealth}`); //Prints the value of the enemy health
-                      
-                    }
-                }
-            }
-            
-        
+			//Define an object to represent the RPG battle.
+			let rpgBattle = {
+				playerHealth: 20,
+				enemyHealth: 20,
+				
+				battle: function(){
+					console.log('Console RPG Battle Loop');
+					//Loop while both players and enemy is above zero
+					while(this.playerHealth > 0 && this.enemyHealth > 0) {
+						let playerAttack = Math.floor(Math.random() * 5) +1;
 
+						console.log(`Player attacks for ${playerAttack} damage!`);
 
+						this.enemyHealth -= playerAttack;
+						console.log(`Enemy Health ${this.enemyHealth}`)
+					}
+				}
+			}
 
+			rpgBattle.battle();
 		</script>
 	</body>
 </html>
