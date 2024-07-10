@@ -1,57 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Fake Company Landing Page</title>
-		<link rel = "stylesheet" href="/sprint2/html-css/style.css"> 
-	</head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to CSS</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="/sprint2/html-css/style.css">
+</head>
+<body>
+  <!-- Header section with an ID for styling -->
+  <header id="header">
+    <h1>Introduction to CSS Styles</h1>
+  </header>
 
-	<body>
-		<header>
-			<!-- Discuss how to style the header using CSS -->
-			<h1>Welcome to Fake Company</h1>
-			<nav>
-				<!-- Show how to target and style the navigation menu -->
-				<ul>
-                    <!-- <li><a href="#">Test</a></li> -->
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Our Services</a></li>
-					<li><a href="#">Contact</a></li>
-                    
-				</ul>
-			</nav>
-		</header>
+  <!-- Main content section -->
+  <main>
+    <!-- Section explaining what CSS is -->
+    <section id="intro">
+      <h2>What is CSS?</h2>
+      <p>CSS (Cascading Style Sheets) is a language used to describe the presentation of a document written in HTML or XML.</p>
+    </section>
 
-		<main>
-			<!-- Discuss styling the main content area -->
-			<section id="about">
-				<!-- Teach about ID selectors in CSS -->
-				<h2>About Us</h2>
-				<p>
-					Fake Company is a leading provider of innovative solutions. With a
-					global footprint, we empower businesses to achieve their full
-					potential through our comprehensive suite of services.
-				</p>
-			</section>
+    <!-- Section describing the role of CSS in web development -->
+    <section id="role">
+      <h2>The Role of CSS in Web Development</h2>
+      <p>CSS enhances the look and feel of web pages and ensures a consistent style across multiple pages.</p>
+    </section>
 
-			<section class="services">
-				<!-- Teach about class selectors in CSS -->
-				<h2>Our Services</h2>
-				<p>
-					From cutting-edge technology to unparalleled customer service, our
-					diverse offerings are designed to cater to every aspect of your
-					business needs.
-				</p>
-			</section>
+    <!-- Section demonstrating CSS syntax -->
+    <section id="syntax">
+      <h2>Syntax of CSS</h2>
+      <p>A CSS rule consists of a selector, property, and value:</p>
+      <!-- Example of a CSS rule -->
+      <pre>
+p {
+  color: blue;
+  font-size: 14px;
+}
+      </pre>
+    </section>
 
-			<!-- Add more sections or content as needed -->
-		</main>
+    <!-- Section explaining different types of CSS: inline, internal, and external -->
+    <section id="types">
+      <h2>Types of CSS</h2>
+      <!-- Inline CSS example -->
+      <h3>Inline CSS</h3>
+      <p style="color: blue;">This is an inline style.</p>
+      
 
-		<footer>
-			<!-- Discuss styling the footer -->
-			<p>&copy; 2023 Fake Company. All rights reserved.</p>
-		</footer>
-	</body>
+      <!-- Internal CSS example -->
+      <h3>Internal CSS</h3>
+      <style>
+        .internal-style {
+          color: blue;
+        }
+      </style>
+      <p class="internal-style">This is an internal style.</p>
+
+      <!-- External CSS example -->
+      <h3>External CSS</h3>
+      <p class="external-style">This is an external style, defined in the linked CSS file.</p>
+    </section>
+
+    <!-- Section demonstrating different CSS selectors -->
+    <section id="selectors">
+      <h2>Targeting HTML with CSS</h2>
+      <!-- Element selector example -->
+      <h3>Element Selector</h3>
+      <p class="example">This is targeted by an element selector.</p>
+
+      <!-- Class selector example -->
+      <h3>Class Selector</h3>
+      <p class="highlight">This is targeted by a class selector.</p>
+
+      <!-- ID selector example -->
+      <h3>ID Selector</h3>
+      <div id="unique">This is targeted by an ID selector.</div>
+
+      <!-- Grouping selectors example -->
+      <h3>Grouping Selectors</h3>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+    </section>
+
+    <!-- Section demonstrating general CSS properties -->
+    <section id="properties">
+      <h2>Learning General CSS Properties</h2>
+      <!-- Example of the box model properties -->
+      <div class="box-model">
+        <p>This box has margin, padding, border, width, and height properties applied.</p>
+      </div>
+    </section>
+
+    <!-- Section explaining CSS resets -->
+    <section id="reset">
+      <h2>Overwriting User Agent CSS Rules by Utilizing Resets</h2>
+      <p>Using CSS resets ensures consistent styling across different browsers.</p>
+      <!-- Example of a CSS reset -->
+      <pre>
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+      </pre>
+    </section>
+
+    <!-- Section demonstrating advanced CSS selectors -->
+    <section id="advanced-selectors">
+      <h2>CSS Selectors</h2>
+      <!-- Descendant selector example -->
+      <h3>Descendant Selector</h3>
+      <div class="ancestor">
+        <p>This is a descendant of div.</p>
+      </div>
+
+      <!-- Child selector example -->
+      <h3>Child Selector</h3>
+      <div class="parent">
+        <p>This is a child of div.</p>
+      </div>
+
+      <!-- Adjacent sibling selector example -->
+      <h3>Adjacent Sibling Selector</h3>
+      <h1>Heading</h1>
+      <p>This paragraph is an adjacent sibling to the heading.</p>
+
+      <!-- General sibling selector example -->
+      <h3>General Sibling Selector</h3>
+      <h1>Heading</h1>
+      <p>This paragraph is a general sibling to the heading.</p>
+
+      <!-- Attribute selector example -->
+      <h3>Attribute Selector</h3>
+      <a href="https://example.com" class="attribute">This link is targeted by an attribute selector.</a>
+
+      <!-- Pseudo-classes and pseudo-elements example -->
+      <h3>Pseudo-Classes and Pseudo-Elements</h3>
+      <a href="#" class="pseudo-class">Hover over this link.</a>
+      <p class="pseudo-element">This paragraph has a pseudo-element applied.</p>
+    </section>
+  </main>
+</body>
 </html>
