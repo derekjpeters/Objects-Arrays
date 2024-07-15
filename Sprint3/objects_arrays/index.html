@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Objects</title>
+	</head>
+	<body>
+		<script>
+			//example of a simpe object with properties
+			const profile = {
+				firstName: "Jane",
+				lastName: "Doe",
+				age: 30,
+
+				//Method
+
+				fullName: function () {
+					return this.firstName + " " + this.lastName + " is " + this.age;
+				},
+			};
+
+			//object
+			const suv = {
+				//properties
+				brand: "GMC",
+				model: "Yukon",
+				year: 2020,
+				//method
+				startEngine: function () {
+					return `${this.brand} ${this.model}'s engine started.`;
+				},
+			};
+
+			console.log(suv.startEngine());
+
+			//constructor Function
+			function User(userName, email) {
+				this.userName = userName;
+				this.email = email;
+				this.isActive = false;
+
+				//Method to activate user
+				this.activate = function () {
+					this.isActive = true;
+					console.log(`${this.userName} is now active.`);
+				};
+
+				//method to deactivate offline more than 60 days
+				this.deactivate = function () {
+					this.isActive = false;
+					console.log(
+						`${this.userName} has been inactive for 60 days, account deactivated.`
+					);
+				};
+
+				//Method to update email
+				this.updateEmail = function (newEmail) {
+					this.email = newEmail;
+					console.log(
+						`${this.userName}'s email has been updaed to ${this.email}`
+					);
+				};
+
+				//Method to display user info
+				this.displayInfo = function () {
+					console.log(
+						`Username: ${this.userName}, Email: ${this.email}, Active Status: ${this.isActive}`
+					);
+				};
+			}
+
+			//Create new user(s) test
+			const user1 = new User("dpeters", "derek@mail.com");
+			console.log(user1);
+			const user2 = new User("nico", "nico@mail.com");
+
+			user1.activate();
+            user2.activate();
+
+            user2.displayInfo();
+
+            user1.updateEmail('derek@email.com');
+            user2.displayInfo();
+
+            user1.deactivate();
+
+		</script>
+	</body>
+</html>

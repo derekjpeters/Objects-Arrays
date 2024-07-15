@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id = "example">
+        Hello, <span class="hidden">World</span>!
+        <p class = "hidden">This will be a hidden paragraph</p>
+    </div>
+    <script>
+        let element = document.getElementById('example');
+
+        //Using Text Content
+        let textContentValue = element.textContent;
+        console.log('textContent: ', textContentValue);
+
+        let innerTextValue = element.innerText;
+        console.log(innerTextValue);
+
+        element.textContent = 'New content using textContent';
+        console.log('Updated textContent', element.textContent);
+
+    </script>
+</body>
+</html>
