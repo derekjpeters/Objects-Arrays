@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#example1, #example3, #example4, #parent, #container, #example5, #parentElement, #reference {
+    margin-bottom: 20px;
+}
+
+#example4.oldClass {
+    color: gray;
+}
+
+#example4.newClass {
+    color: green;
+}
+
+.builtClass {
+    font-weight: bold;
+}
