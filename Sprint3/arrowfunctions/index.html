@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Arrow Functions</title>
+	</head>
+	<body>
+		<script>
+			// const add = function(a,b) {
+			//     return a + b;
+			// }
+			const add = (a, b) => a + b;
+			console.log(add(2, 3));
+
+			/*function Person() {
+            this.age = 0;
+
+            // setInterval(function(){
+            //     this.age++;
+            //     console.log(age);
+            // }, 1000);
+
+            setInterval(() => {
+                this.age++;
+                console.log(this.age)
+            },1000);
+        }
+
+        const p = new Person();*/
+
+			// function sum() {
+			//     let total = 0;
+			//     for (let i = 0; i < arguments.length; i++) {
+			//         total += arguments[i];
+			//     }
+			//     return total;
+			// }
+
+			// console.log(sum(1,2,3,4));
+
+			const sum = (...numbers) => {
+				return numbers.reduce((acc, curr) => acc + curr, 0);
+			};
+			console.log(sum(7, 8, 9, 10));
+
+			const greet = (name = "User") => {
+				return `Hello ${name}`;
+			};
+
+			console.log(greet());
+			console.log(greet("Nico"));
+
+			class Person {
+				constructor(name = "User", age = 30) {
+					this.name = name;
+					this.age = age;
+				}
+
+				//Method using an arrow funtion syntax with default arguments
+				greet = (greeting = "Hello") => {
+					console.log(
+						`${greeting}, my name is ${this.name} and I am ${this.age} years old`
+					);
+				};
+
+				//Method using arrow function for handling variable number of arguments
+				addHobbies = (...hobbies) => {
+					this.hobbies = hobbies;
+					console.log(`${this.name}'s hobbies are: ${this.hobbies.join(", ")}`);
+				};
+
+				startAging = () => {
+					setInterval(() => {
+						this.age++;
+						console.log(`${this.name} is now ${this.age} years old`);
+					}, 1000);
+				};
+			}
+
+            //Person with a default Age 
+            const person1 = new Person('Andy');
+            person1.greet();
+            person1.greet('Hi');
+
+            //add some hobbies
+            person1.addHobbies('Guitar', 'Lifting Weights');
+
+            //Start the aging process
+            //person1.startAging();
+
+            //Create another person with specified age
+            const person2 = new Person('Michael', 25);
+            person2.greet();
+
+            console.log(person1.hobbies);
+		</script>
+	</body>
+</html>
