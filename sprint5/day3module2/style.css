@@ -71,3 +71,32 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+#formMessages {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+#formMessages.success {
+    color: green;
+}
+
+#formMessages.error {
+    color: red;
+}
+
+#loadingIndicator {
+    color: blue;
+    font-weight: bold;
+}
+
+#outerDiv {
+    padding: 20px;
+    background-color: #ddd;
+    margin-top: 20px;
+}
+
+#innerDiv {
+    padding: 20px;
+    background-color: #bbb;
+}

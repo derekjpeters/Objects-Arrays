@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>forEach map & filter</title>
+	</head>
+	<body>
+		<script>
+			const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+            const evenNumbers = numbers.filter((number) =>{
+                return number % 2 === 0;
+            });
+
+            const doubledNumbers = numbers.map((number) => {
+                return number * 2;
+            });
+
+            
+
+            console.log(evenNumbers);
+
+			numbers.forEach(function (number) {
+				console.log(number);
+			});
+
+			const snacks24W5 = ["pretzel", "takis", "salads"];
+			const snacks24W5UpperCase = [];
+
+			snacks24W5.forEach(function (snack) {
+				snacks24W5UpperCase.push(snack.toUpperCase());
+			});
+			console.log(snacks24W5);
+			console.log(snacks24W5UpperCase);
+
+            const products = [
+                {name: 'Laptop', inStock: true},
+                {name: 'Phone', inStock: false},
+                {name: 'Tablet', inStock: true}
+            ];
+            console.log(products);
+
+            const inStockProducts = products.filter((product) => {
+                return product.inStock;
+            });
+
+            const users = [
+                {name: 'Chloe', age: 25},
+                {name: 'Alanah', age: 30},
+                {name: 'John', age: 35}
+            ];
+
+            const userNames = users.map((user) => {
+                return user.name;
+            });
+
+            console.log(userNames);
+            console.log(inStockProducts);
+            console.log(doubledNumbers);
+
+            class Student {
+                constructor(name, score) {
+                    this.name = name;
+                    this.score = score;
+                }
+
+                //Method to check if the student has passed
+                hasPassed(passingScore) {
+                    return this.score >= passingScore;
+                }
+            }
+
+            //mock data = Student  Objects
+            const students = [
+                new Student('Ricky Bobby', 85),
+                new Student('Bob', 58),
+                new Student('David', 76),
+                new Student('Allison', 95),
+                new Student('Alice', 85)
+            ];
+
+            //1. Use forEach to log student details
+            students.forEach(student => console.log(`Student: ${student.name}, Score: ${student.score}`));
+
+            //2. Use filter to show only passing students
+            const passingScore = 70;
+            const passedStudents = students.filter(student => student.hasPassed(passingScore));
+            console.log('Passed Students: ', passedStudents)
+
+            //3. Use map to create the names in upperCase
+            const studentNamesInUpperCase = students.map(student => student.name.toUpperCase());
+            console.log('Student Names in Uppercase: ', studentNamesInUpperCase);
+
+            const processedStudents = students
+             .filter(student => student.hasPassed(passingScore)) //filter the students
+             .map(student => student.name.toUpperCase());
+
+             console.log(processedStudents);
+
+
+		</script>
+	</body>
+</html>

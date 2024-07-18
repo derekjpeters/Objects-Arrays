@@ -55,5 +55,59 @@ contactForm.addEventListener('submit', (event) =>{
     }, 2000);
 });
 
+const outerDiv = document.getElementById('outerDiv');
+const innerDiv = document.getElementById('innerDiv');
+const propagationButton = document.getElementById('propagationButton');
 
+//Capturing phase
+outerDiv.addEventListener('click', (event) => {
+    console.log('Outer Div (Capturing) - Target: ', event.target, 'CurrentTarget: ', event.currentTarget);
+}, true);
 
+//Bubbling Phase
+outerDiv.addEventListener('click', (event) => {
+    console.log('Outer Div (Bubbling) - Target: ', event.target, 'CurrentTarget: ', event.currentTarget);
+}, false);
+
+innerDiv.addEventListener('click', (event) =>{
+    console.log('Inner Div (Bubbling) - Target:', event.target, 'CurrentTarget: ', event.currentTarget);
+});
+
+propagationButton.addEventListener('click', (event) => {
+    event.stopPropagation(); 
+    alert('Propegation has stopped');
+});
+
+//building a component using a function:
+function createComponent(title, content) {
+    //create a component div
+    const componentDiv = document.createElement('div');
+    componentDiv.className = 'component';
+
+    //create title element
+    const componentTitle = document.createElement('h3');
+    componentTitle.innerText = title;
+
+    //create the content
+    const componentContent =document.createElement('p');
+    componentContent.innerText = content;
+
+    //Append the title and the content to the component div
+    componentDiv.appendChild(componentTitle);
+    componentDiv.appendChild(componentContent);
+
+    return componentDiv;
+}
+
+const componentContainer = document.getElementById('componentContainer');
+const addComponentButton = document.createElement('button');
+addComponentButton.id = 'addComponentButton';
+addComponentButton.innerText = 'Add Component';
+document.getElementById('component').insertBefore(addComponentButton,componentContainer);
+
+addComponentButton.addEventListener('click', () =>{
+    const newComponent = createComponent('This is the h3', 'this is the p')
+    //add a component container
+    componentContainer.appendChild(newComponent);
+    console.log('added new component conatiner ', newComponent);
+});
