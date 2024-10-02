@@ -1,6 +1,6 @@
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	display: flex; /* Enable flexbox for the body layout*/
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -9,11 +9,10 @@ body {
     background-color: #05A4C7;
 }
 
-/* Container for the flex items*/
 .flex-container {
     display: flex;
     width: 80%;
-    height:300px;
+    height: 300px;
     border: 2px solid red;
     background-color: aliceblue;
     margin-bottom: 20px;
@@ -24,7 +23,7 @@ body {
     transition: all 1s ease;
 }
 
-.flex-item{
+.flex-item {
     width: 50px;
     height: 50px;
     background-color: brown;
@@ -33,36 +32,36 @@ body {
     align-items: center;
     justify-content: center;
     margin: 5px;
-    font-size: 12px;
-    box-shadow: 2px 2px 5px rgba (0,0,0,0.2);
+    font-size: 20px;
+    box-shadow: 5px, 5px, 10px rgba(0, 0, 0, 0.686);
 }
 
-.flex-item:nth-child(even) {
+.flex-item:nth-child(even){
     background-color: darkblue;
 }
 
-.controls button{
+.controls button {
     margin: 10px;
     padding: 10px 20px;
-    font-size: 12px;
+    font-size: 20px;
     cursor: pointer;
     background-color: yellow;
     color: black;
-    border-radius: 5px;  
+    border-radius: 5px;
     transition: all 1s ease;
-    overflow: hidden;  
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 
-.controls button:active{
-    box-shadow: 0 2px #13213C;
+.controls button:active {
+    background-color: aquamarine;
+    box-shadow: 0 5px #13213C;
     transform: translateY(2px);
 }
 
-.controls button:hover {
-    background-color: aquamarine;
-}
-
-.controls{
+.controls {
     display: flex;
     justify-content: center;
 }
+

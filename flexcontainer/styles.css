@@ -1,0 +1,52 @@
+/* Set the font and background color for the entire body */
+body {
+    font-family: Arial, sans-serif; /* Use Arial font for better readability */
+    background-color: #f4f4f4; /* Light gray background for a soft look */
+    margin: 0; /* Remove default margin for a cleaner layout */
+    padding: 0; /* Remove default padding for a cleaner layout */
+    display: flex; /* Use flexbox to center the content */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Style the control buttons */
+.controls {
+    margin-top: 20px; /* Space between flex container and controls */
+}
+
+button {
+    margin: 5px; /* Space between buttons */
+    padding: 10px 15px; /* Button padding for better click area */
+    border: none; /* Remove default border */
+    background-color: #007bff; /* Blue background for buttons */
+    color: white; /* White text color */
+    font-size: 16px; /* Larger text for readability */
+    cursor: pointer; /* Pointer cursor for buttons */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Flex Container Example */
+.flex-container {
+    display: flex; /* Define this element as a flex container */
+    justify-content: center; /* Initial justification for the main axis */
+    align-items: center; /* Initial alignment for the cross axis */
+    border: 2px solid #000; /* Add a black border for visual separation */
+    padding: 20px; /* Add padding inside the container for spacing */
+    width: 80%; /* Set the container width to 80% of the parent */
+    background-color: #fff; /* White background for a clean look */
+}
+
+/* Style individual flex items */
+.flex-item {
+    background-color: #f0f0f0; /* Light gray background for each item */
+    margin: 10px; /* Add margin around each item for spacing */
+    padding: 20px; /* Add padding inside each item for spacing */
+    border: 1px solid #ddd; /* Light gray border for visual separation */
+    text-align: center; /* Center text inside each item */
+    flex: 1; /* Allow items to grow and shrink as needed */
+}
