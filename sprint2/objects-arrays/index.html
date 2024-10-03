@@ -7,8 +7,123 @@
 </head>
 <body>
     <script>
-       
-        
+        //  const user1 = {
+        //     name: "Derek", //name is a property of the object user
+        //     username:"derekjpeters",
+        //     age: 42, //age is a property of this user
+        //     occupation: "Engineering Operations", 
+        //     email: "derek@email.com",
+        //     favoriteColors: ["Green", "Orange"],
+
+        //     greeting: function() {
+        //         console.log(`Good Evening, ${this.name}! Thank you for logging in!`)
+        //     }
+        //  };
+
+        //  console.log(user1.favoriteColors);
+
+        //  user1.greeting();
+
+        // const user2 = {
+        //     name: "Jane Doe",
+        //     username: "janedoe1957",
+        //     age: 33,
+        //     occupation: "Data Analytics",
+        //     email: "jane@email.com"
+        // };
+
+
+        //  console.log(user1);
+        //  console.log(user1.username);
+        //  console.log(user1.name);
+        //  console.log(user1.age);
+        //  console.log(user1.email);
+
+        //  user1.age = 41;
+        //  console.log(user2.age);
+
+        //  console.log(user1.age);
+
+        //  user1.hobby = "Woodworking";
+        //  console.log(user1.hobby);
+
+        //  const car = {
+        //     brand: "Chevy",
+        //     model: "Tahoo",
+        //     year: "1996",
+
+        //     displayInfo: function() {
+        //         console.log(`Car: ${this.brand} ${this.model}, Year: ${this.year}`);
+        //     }
+        //  };
+
+        //  car.displayInfo();
+
+        //  const fruits = ["Apple", "Banana", "Orange", "Mango"];
+        //  console.log(fruits);
+        //  console.log(fruits[2]);
+        //  console.log(fruits[0]);
+        //  fruits[1] = "Blueberry";
+        //  console.log(fruits);
+        //  //Add a new element into an array I would push
+        //  fruits.push("Strawberry");
+        //  console.log(fruits);
+
+        //  fruits.pop();
+        //  console.log(fruits);
+        //  fruits.pop();
+        //  console.log(fruits);
+        //  fruits.pop();
+        //  console.log(fruits);
+        //  fruits.pop();
+        //  console.log(fruits);
+        //  fruits.pop();
+        //  console.log(fruits);
+        //  fruits.push("Apples");
+        //  console.log(fruits);
+        //  fruits.push("Blueberry");
+        //  console.log(fruits);
+        //  fruits.push("Orange");
+        //  console.log(fruits);
+        //  fruits.push("Mango");
+        //  console.log(fruits);
+        //  fruits.push("Strawberry");
+        //  console.log(fruits);
+
+         const studentArray = [
+            {name: "John", subject: "JavaScript"},
+            {name: "Mary", subject: "Python"},
+            {name: "Charlie", subject: "TypeScript"},
+            {name: "Derek", subject: "Bowling"}
+         ];
+
+         studentArray.forEach(function(studentArray) {
+            console.log(`${studentArray.name} is currently studing ${studentArray.subject}`);
+         })
+
+        //  //accessing data in an array of objects
+        //  console.log(studentArray[0].name);
+        //  console.log(studentArray[1].name);
+        //  console.log(studentArray[0].subject);
+
+            const book = {
+                title: "Javascript the definitive guide",
+                edition: 7,
+                author: "David Flanagan",
+                year: "2020",
+               
+            };
+
+            console.log(book);
+            for (let key in book) {
+                console.log(`${key}: ${book[key]}`);
+            }
+
+
+
+
+
+
     </script>
 </body>
 </html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bugs, bugs, and bugs</title>
+	</head>
+	<body>
+		<script>
+			// Store Inventory Management with Missing Pieces
+
+			const storeInventory = {
+				categories: [
+					{
+						categoryName: "Electronics",
+						products: [
+							{
+								name: "Laptop",
+								price: 1200,
+								stock: 10,
+								description: "High-performance laptop",
+							},
+							{
+								name: "Smartphone",
+								price: 800,
+								stock: 25,
+								description: "Latest model smartphone",
+							},
+						],
+					},
+					{
+						categoryName: "Clothes",
+						products: [
+							{
+								name: "T-Shirt",
+								price: 20,
+								stock: 100,
+								description: "100% cotton T-shirt",
+							},
+							{
+								name: "Jeans",
+								price: 50,
+								stock: 50,
+								description: "Stylish denim jeans",
+							},
+						],
+					},
+					{
+						categoryName: "Books",
+						products: [
+							{
+								name: "JavaScript Guide",
+								price: 30,
+								stock: 15,
+								description: "Comprehensive guide to JavaScript",
+							},
+						],
+					},
+				],
+
+				// Method to display inventory
+				displayInventory: function () {
+					this.categories.foreach((category) => {
+						// Bug 1: typo in 'foreach'
+						console.log(`\nCategory: ${category.categoryName}`);
+						category.products.foreach((product) => {
+							// Bug 2: typo in 'foreach'
+							console.log(
+								`${product.name} - $${product.price} - Stock: ${product.stock}`
+							);
+						});
+					});
+				},
+
+				// Method to add a product
+				addProduct: function (
+					categoryName,
+					productName,
+					price,
+					stock,
+					description
+				) {
+					const category = this.categories.find(
+						(cat) => (cat.categoryName = categoryName)
+					); // Bug 3: incorrect comparison operator
+
+					if (category) {
+						category.products.push({
+							name: productName,
+							price,
+							stock,
+							description,
+						});
+					} else {
+						console.log("Category not found");
+					}
+				},
+
+				// Method to update stock
+				updateStock: function (categoryName, productName, newStock) {
+					const category = this.categories.find(
+						(cat) => cat.categoryName === categoryName
+					);
+					if (category) {
+						const product = category.products.find(
+							(prod) => (prod.name = productName)
+						); // Bug 4: incorrect comparison operator
+						if (product) {
+							product.stock == newStock; // Bug 5: wrong assignment operator
+							console.log(`Updated ${productName} stock to ${newStock}`);
+						} else {
+							console.log("Product not found");
+						}
+					} else {
+						console.log("Category not found");
+					}
+				},
+
+				// Method to search for a product by name
+				searchProduct: function (productName) {
+					this.categories.forEach((category) => {
+						const product = category.products.find(
+							(prod) => prod.name === productName
+						);
+						if (product) {
+							console.log(`${productName} found in ${category.categoryName}`);
+							console.log(`Price: $${product.price}, Stock: ${product.stock}`);
+							console.log(`Description: ${product.description}`);
+						} else {
+							console.log(`${productName} not found`); // Bug 6: prints too many times (outside of condition)
+						}
+					});
+				},
+			};
+
+			// Let's try using the methods
+
+			storeInventory.displayInventory(); // Bug 1 and Bug 2 will prevent this from working
+
+			storeInventory.addProduct(
+				"Electronics",
+				"Tablet",
+				600,
+				15,
+				"Lightweight tablet with powerful features"
+			);
+
+			storeInventory.updateStock("Clothes", "Jeans", 75); // Bug 4 and 5 will cause this to fail
+
+			storeInventory.searchProduct("JavaScript Guide"); // Bug 6 will cause unnecessary messages
+		</script>
+	</body>
+</html>
